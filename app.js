@@ -1,12 +1,12 @@
 /* ====================================================================
    Без границ — бета-страница отчёта по мероприятию
-   Vanilla JS. Без сборки. Открыть index.html в браузере.
+   Vanilla JS. Без сборки. Открыть report.html в браузере.
    ==================================================================== */
 
 'use strict';
 
 // Логотип для PDF-шаблона встроен как base64 (а не загружается файлом logo-icon.png):
-// при открытии index.html напрямую как file:// (без локального сервера) картинка,
+// при открытии report.html напрямую как file:// (без локального сервера) картинка,
 // подгруженная отдельным файлом, "пачкает" canvas — html2canvas.toDataURL() падает
 // с SecurityError. Инлайновый data:-URI этого не допускает вообще, вне зависимости
 // от того, как открыта страница.
@@ -161,7 +161,7 @@ function renderAll() {
 /** Показываем переключатель «Проект/Динамика/Подрядчики», только когда есть что переключать:
     отчёт заполнен, или уже есть история в «Динамике», или сохранённый каталог подрядчиков.
     Отдельно: если пользователь уже НЕ на вкладке «Проект» (например, зашёл по ссылке
-    index.html#dynamics на пустой отчёт) — переключатель всё равно показываем, чтобы
+    report.html#dynamics на пустой отчёт) — переключатель всё равно показываем, чтобы
     не запереть его на пустой вкладке без единой видимой кнопки для возврата. */
 function updateModeBarVisibility() {
   const hasData = !!(
@@ -2027,7 +2027,7 @@ function bindContractors() {
 
   // Загрузка базы подрядчиков из contractors-base.js (window.CONTRACTORS_BASE).
   // Раньше грузили contractors-base.json через fetch(), но fetch() локальных файлов
-  // не работает при открытии index.html напрямую как file:// (без сервера) — в отличие
+  // не работает при открытии report.html напрямую как file:// (без сервера) — в отличие
   // от <script src>, который грузится в обоих случаях одинаково.
   const loadBtn = $('#contrLoadBaseBtn');
   if (loadBtn) loadBtn.addEventListener('click', () => {
@@ -2043,7 +2043,7 @@ function bindContractors() {
       updateContrCountInfo();
       alert('Готово. Добавлено новых: ' + added + '. Всего в каталоге: ' + state.contractors.length + '.');
     } catch (err) {
-      alert('Не удалось загрузить базу: ' + err.message + '\nФайл contractors-base.js должен лежать рядом с index.html и быть подключён в <head>/перед app.js.');
+      alert('Не удалось загрузить базу: ' + err.message + '\nФайл contractors-base.js должен лежать рядом с report.html и быть подключён в <head>/перед app.js.');
     }
   });
   // Экспорт базы подрядчиков в JSON
@@ -2060,7 +2060,7 @@ function updateContrCountInfo() {
   if (el) el.textContent = 'Всего в каталоге: ' + (state.contractors ? state.contractors.length : 0);
 }
 /** Чекбокс «Автосохранение JSON» в топбаре — вкл/выкл автоскачивание JSON при
-    закрытии/обновлении страницы (см. beforeunload в index.html). Настройка хранится
+    закрытии/обновлении страницы (см. beforeunload в report.html). Настройка хранится
     в localStorage и не зависит от конкретного отчёта. */
 function initAutoExportToggle() {
   const cb = $('#autoExportToggle');
@@ -2102,10 +2102,10 @@ function init() {
   state.contractors = mergeContractors(state.contractors, loadContrDir());
   renderAll();
 
-  // глубокая ссылка: index.html#dynamics → сразу режим динамики
+  // глубокая ссылка: report.html#dynamics → сразу режим динамики
   if (window.location.hash === '#dynamics') switchMode('dynamics');
 
-  // Маячок для index.html: подтверждает, что app.js не просто загрузился как файл,
+  // Маячок для report.html: подтверждает, что app.js не просто загрузился как файл,
   // а реально выполнился до конца и навесил все обработчики (кнопки импорта/экспорта,
   // сохранения и т.п.). Без этого сбой загрузки app.js (например, антивирус при первом
   // открытии file:// сразу после распаковки) проходит совсем без видимой ошибки —

@@ -3,606 +3,146 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Проект мероприятия — Без границ</title>
-<script>
-/* Проверка, что styles.css реально применился. Если открыть страницу двойным
-   кликом (file://) сразу после скачивания/распаковки, антивирус иногда успевает
-   «на лету» просканировать файлы стилей/картинок, и они подгружаются с заметной
-   задержкой — страница на секунду-другую показывается совсем без оформления.
-   Специально написано без зависимостей от app.js: если из-за той же причины не
-   загрузится и он, предупреждение всё равно должно появиться.
-   Опирается только на «маячок» --css-loaded (см. styles.css) + опрос по таймеру —
-   событие error у <link rel="stylesheet"> ненадёжно (в Chromium не гарантированно
-   всплывает ни при сетевом сбое, ни тем более при HTTP-ошибке), поэтому отдельно
-   не используется.
-   Этот скрипт специально стоит ДО <link rel="stylesheet">: браузер откладывает
-   выполнение любого <script>, идущего ПОСЛЕ ещё не загруженной таблицы стилей,
-   до её полной загрузки/ошибки — если бы проверка стояла после ссылки на
-   styles.css, она бы не запускалась, пока файл грузится, и не могла бы поймать
-   именно медленную (но не мгновенно ошибочную) загрузку. */
-(function () {
-  function cssApplied() {
-    try { return getComputedStyle(document.documentElement).getPropertyValue('--css-loaded').trim() === '1'; }
-    catch (e) { return false; }
-  }
-  // app.js подключается отдельным <script> в конце страницы (см. низ файла) и
-  // в конце своей инициализации выставляет window.__appReady = true. Если он не
-  // загрузится/не выполнится по той же причине (антивирус при первом открытии
-  // file://) — HTML и CSS на месте, страница выглядит нормально, но ни одна кнопка
-  // фактически не работает (импорт/экспорт, сохранение и т.д.), и это проходит
-  // совсем без видимой ошибки. Поэтому «всё загрузилось» проверяем по ОБОИМ
-  // маячкам сразу — иначе баннер по CSS мог бы закрыться, пока app.js ещё не готов.
-  function appReady() { return window.__appReady === true; }
-  function allReady() { return cssApplied() && appReady(); }
-  function ensureBanner() {
-    var b = document.getElementById('assetWarnBanner');
-    if (b) return b;
-    b = document.createElement('div');
-    b.id = 'assetWarnBanner';
-    b.style.cssText = 'position:fixed;top:0;left:0;right:0;z-index:99999;background:#B23B3B;color:#fff;'
-      + 'font:600 14px/1.4 system-ui,Segoe UI,Arial,sans-serif;padding:10px 16px;display:flex;gap:12px;'
-      + 'align-items:center;justify-content:center;flex-wrap:wrap;box-shadow:0 2px 10px rgba(0,0,0,.35)';
-    var msg = document.createElement('span');
-    msg.id = 'assetWarnBannerText';
-    var btn = document.createElement('button');
-    btn.type = 'button';
-    btn.textContent = 'Обновить страницу';
-    btn.style.cssText = 'background:#fff;color:#B23B3B;border:0;border-radius:6px;padding:6px 14px;font-weight:700;cursor:pointer';
-    btn.onclick = function () { location.reload(); };
-    b.appendChild(msg); b.appendChild(btn);
-    (document.body || document.documentElement).insertBefore(b, document.body.firstChild);
-    return b;
-  }
-  function showBanner(text) {
-    var render = function () { ensureBanner().querySelector('#assetWarnBannerText').textContent = text; };
-    if (document.body) render(); else document.addEventListener('DOMContentLoaded', render);
-  }
-  // Доступно снизу страницы (после app.js) для второй, отдельной проверки — именно
-  // готовности скриптов, а не только стилей.
-  window.__bgAssetWarn = { showBanner: showBanner, allReady: allReady, appReady: appReady, cssApplied: cssApplied };
-  // стили обычно применяются почти мгновенно — если через 1.8с этого не произошло,
-  // страница либо ещё грузится (антивирус/диск), либо файл действительно недоступен
-  setTimeout(function () {
-    if (cssApplied()) return;
-    showBanner('⚠️ Страница загрузилась без оформления. Обычно это временно — например, антивирус проверяет файлы при первом открытии. Подождите несколько секунд: если само не исправится, обновите страницу.');
-    var tries = 0;
-    var poll = setInterval(function () {
-      tries++;
-      if (allReady()) {
-        var b = document.getElementById('assetWarnBanner');
-        if (b) b.remove();
-        clearInterval(poll);
-      } else if (cssApplied()) {
-        clearInterval(poll); // CSS сам восстановился — за app.js дальше следит свой таймер снизу страницы
-      } else if (tries === 20) { // ~20с прошло, самостоятельно не исправилось
-        showBanner('⚠️ Стили страницы (styles.css) так и не загрузились. Проверьте, что файл styles.css лежит рядом с index.html, и обновите страницу.');
-      }
-    }, 1000);
-  }, 1800);
-})();
-</script>
+<title>Без границ — студия декора и флористики</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="styles.css?v=8" id="mainStylesheet" />
+<style>
+  :root{
+    --ink:#fff; --muted-1:#CFCFCF; --muted-2:#9A9A9A; --footer:#7A7A7A;
+    --border:rgba(255,255,255,.15);
+    --btn-primary-bg:#fff; --btn-primary-text:#111; --btn-primary-hover:#e8e8e8;
+    --btn-ghost-bg:rgba(255,255,255,.08); --btn-ghost-hover:rgba(255,255,255,.16);
+    --logo-filter:none;
+  }
+  :root[data-theme="light"]{
+    --ink:#33383D; --muted-1:#5C6167; --muted-2:#888D92; --footer:#5C6167;
+    --border:rgba(52,56,61,.18);
+    --btn-primary-bg:#2B2F33; --btn-primary-text:#F5F4F1; --btn-primary-hover:#3B4045;
+    --btn-ghost-bg:rgba(52,56,61,.07); --btn-ghost-hover:rgba(52,56,61,.14);
+    --logo-filter:invert(1);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:'Inter',system-ui,Arial,sans-serif;color:var(--ink);min-height:100vh;
+    background:#2A2A2A url('background.png') center/cover no-repeat fixed;
+    display:flex;align-items:center;justify-content:center;padding:40px 20px;position:relative;
+  }
+  :root[data-theme="light"] body{background:#F1F0EE url('background-light.jpg') center/cover no-repeat fixed}
+  body::before{content:"";position:fixed;inset:0;pointer-events:none;
+    background:linear-gradient(90deg,#3A3A3A 0%,#4C4C4C 55%,#5A5A5A 100%);opacity:.15}
+  body::after{content:"";position:fixed;inset:0;pointer-events:none;background:#000;opacity:.4}
+  :root[data-theme="light"] body::before,:root[data-theme="light"] body::after{opacity:0}
+  .top-actions{position:fixed;top:18px;right:18px;z-index:2;display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+  .theme-toggle,.info-toggle{
+    cursor:pointer;font-family:inherit;font-size:13px;font-weight:700;
+    padding:8px 14px;border-radius:8px;border:1px solid var(--border);background:var(--btn-ghost-bg);color:var(--ink);
+  }
+  .theme-toggle:hover,.info-toggle:hover{background:var(--btn-ghost-hover)}
+  /* Разовое уведомление «где хранятся данные» — см. скрипт внизу страницы */
+  .welcome-overlay{position:fixed;inset:0;z-index:50;background:rgba(0,0,0,.6);display:none;align-items:center;justify-content:center;padding:20px}
+  .welcome-overlay.visible{display:flex}
+  .welcome-card{background:#1c1c1c;border:1px solid var(--border);border-radius:14px;padding:30px;max-width:460px;
+    max-height:85vh;overflow:auto;text-align:left;box-shadow:0 10px 40px rgba(0,0,0,.45)}
+  :root[data-theme="light"] .welcome-card{background:#F7F6F3}
+  .welcome-card .icon{font-size:34px;text-align:center;margin-bottom:10px}
+  .welcome-card h2{font-size:19px;line-height:1.3;margin-bottom:14px;text-align:center;color:var(--ink);text-transform:none;letter-spacing:normal}
+  .welcome-card p{font-size:14.5px;line-height:1.6;color:var(--muted-1);margin-bottom:12px}
+  .welcome-card b{color:var(--ink)}
+  .welcome-card ul{list-style:none;padding:0;margin:0 0 14px}
+  .welcome-card li{font-size:14px;line-height:1.55;color:var(--muted-1);margin-bottom:8px}
+  .welcome-card .btn-primary{width:100%;justify-content:center;margin-top:4px;padding:13px;font-size:14px}
+  .card{position:relative;z-index:1;text-align:center;max-width:760px}
+  .logo{width:300px;max-width:60vw;height:auto;margin:0 auto 30px;filter:var(--logo-filter) drop-shadow(0 8px 30px rgba(0,0,0,.6))}
+  .brand{font-weight:500;font-size:34px;line-height:1.2;letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px}
+  .brand b{font-weight:700;display:block;font-size:22px;letter-spacing:.1em;margin-top:8px;color:var(--muted-1)}
+  .tagline{font-weight:400;font-size:18px;line-height:1.5;color:var(--muted-2);margin:24px auto 36px;max-width:560px}
+  .actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:8px;cursor:pointer;font-family:inherit;font-size:16px;font-weight:700;
+    padding:14px 28px;border-radius:10px;text-decoration:none;border:1px solid var(--border);transition:all .15s}
+  .btn-primary{background:var(--btn-primary-bg);color:var(--btn-primary-text)}
+  .btn-primary:hover{background:var(--btn-primary-hover);transform:translateY(-1px)}
+  .btn-ghost{background:var(--btn-ghost-bg);color:var(--ink)}
+  .btn-ghost:hover{background:var(--btn-ghost-hover)}
+  .footer{position:fixed;bottom:18px;left:0;right:0;text-align:center;color:var(--footer);font-size:13px;font-weight:700;z-index:1}
+</style>
 </head>
 <body>
-
-<script>
-/* Разовое уведомление при первом визите: все данные вводятся и хранятся ТОЛЬКО в
-   этом браузере на этом компьютере (localStorage) — сервера с общей базой данных
-   нет. Самостоятельный скрипт в самом начале <body>, не зависящий от app.js/
-   styles.css (по той же причине, что и проверка выше в <head>) — должен появиться,
-   даже если остальное ещё не подгрузилось, и появиться СРАЗУ, а не ждать полной
-   загрузки страницы. Текст рассчитан на человека, который вообще не разбирается
-   в компьютерах — без терминов вроде «localStorage», с бытовым сравнением.
-   Флаг «уже видел» хранится в localStorage — показывается один раз за всё время
-   использования этим браузером, независимо от того, сколько потом будет проектов.
-   Кнопку «ℹ️ Где хранятся данные» в топбаре можно открыть повторно в любой момент —
-   она вызывает window.__bgShowWelcomeNotice(). */
-(function () {
-  var KEY = 'bg-welcome-notice-v1';
-  function isLight() {
-    try { return localStorage.getItem('bg-theme-v1') === 'light'; } catch (e) { return false; }
-  }
-  function render(force) {
-    var existing = document.getElementById('welcomeNotice');
-    if (existing) { existing.style.display = 'flex'; return; }
-    var seenBefore = false;
-    try { seenBefore = localStorage.getItem(KEY) === '1'; } catch (e) {}
-    if (seenBefore && !force) return;
-
-    var light = isLight();
-    var bg = light ? '#F7F6F3' : '#242424';
-    var text = light ? '#33383D' : '#E8E8E8';
-    var muted = light ? '#5C6167' : '#B8B8B8';
-    var border = light ? 'rgba(52,56,61,.18)' : 'rgba(255,255,255,.15)';
-    var btnBg = light ? '#2B2F33' : '#FFFFFF';
-    var btnText = light ? '#F5F4F1' : '#111111';
-
-    var overlay = document.createElement('div');
-    overlay.id = 'welcomeNotice';
-    overlay.style.cssText = 'position:fixed;inset:0;z-index:99998;background:rgba(0,0,0,.6);'
-      + 'display:flex;align-items:center;justify-content:center;padding:20px;'
-      + 'font-family:Inter,system-ui,Segoe UI,Arial,sans-serif';
-
-    var card = document.createElement('div');
-    card.style.cssText = 'background:' + bg + ';border:1px solid ' + border + ';border-radius:14px;'
-      + 'padding:30px;max-width:460px;max-height:85vh;overflow:auto;box-shadow:0 10px 40px rgba(0,0,0,.45)';
-
-    card.innerHTML =
-        '<div style="font-size:34px;text-align:center;margin-bottom:10px">💾</div>'
-      + '<h2 style="font:700 19px/1.3 inherit;margin:0 0 14px;text-align:center;color:' + text + '">Прежде чем начать — важно</h2>'
-      + '<p style="font-size:14.5px;line-height:1.6;color:' + muted + ';margin:0 0 12px">'
-      +   'Всё, что вы впишете на этой странице — даты, суммы, заметки — сохраняется только '
-      +   '<b style="color:' + text + '">здесь</b>: на <b style="color:' + text + '">этом компьютере</b>, '
-      +   'в <b style="color:' + text + '">этом браузере</b> (программе, через которую вы сейчас смотрите '
-      +   'страницу — например, Яндекс Браузер или Chrome).</p>'
-      + '<p style="font-size:14.5px;line-height:1.6;color:' + muted + ';margin:0 0 14px">'
-      +   'Это как тетрадь на вашем столе — её никто не видит, пока вы сами её кому-то не покажете.</p>'
-      + '<ul style="list-style:none;padding:0;margin:0 0 14px">'
-      +   '<li style="font-size:14px;line-height:1.55;color:' + muted + ';margin-bottom:8px">📍 На другом компьютере или телефоне, даже по той же ссылке — здесь будет пусто.</li>'
-      +   '<li style="font-size:14px;line-height:1.55;color:' + muted + ';margin-bottom:8px">🔄 В другом браузере на этом же компьютере — тоже будет пусто.</li>'
-      +   '<li style="font-size:14px;line-height:1.55;color:' + muted + '">🔒 Никто — ни коллеги, ни мы — не видит и не получает то, что вы вписали.</li>'
-      + '</ul>'
-      + '<p style="font-size:14.5px;line-height:1.6;color:' + muted + ';margin:0 0 20px">'
-      +   'Чтобы передать записи коллеге или сохранить на всякий случай — наверху страницы есть кнопка '
-      +   '<b style="color:' + text + '">«Экспорт»</b>. Она сохранит файл на компьютер, который можно переслать по почте или в мессенджере.</p>'
-      + '<button type="button" id="welcomeNoticeOk" style="width:100%;padding:13px;border:0;border-radius:8px;'
-      +   'background:' + btnBg + ';color:' + btnText + ';font:700 14px/1 inherit;cursor:pointer">Понятно, не показывать больше</button>';
-
-    overlay.appendChild(card);
-    document.body.appendChild(overlay);
-    document.getElementById('welcomeNoticeOk').addEventListener('click', function () {
-      try { localStorage.setItem(KEY, '1'); } catch (e) {}
-      overlay.style.display = 'none';
-    });
-  }
-  // чтобы кнопку «ℹ️» в топбаре можно было нажать в любой момент и перечитать текст
-  window.__bgShowWelcomeNotice = function () { render(true); };
-  render(false);
-})();
-</script>
-
-<!-- ТОПБАР: логотип + название + действия -->
-<header class="topbar">
-  <div class="topbar-left">
-    <img src="logo-icon.png" alt="Без границ" class="topbar-logo" />
-    <img src="logo-text.png" alt="Студия декора и флористики" class="topbar-text" />
+  <div class="top-actions">
+    <button type="button" class="info-toggle" id="dataInfoBtn" title="Где хранятся ваши данные">ℹ️ Где хранятся данные</button>
+    <button type="button" class="theme-toggle" id="themeToggle" title="Переключить тему">🌙 Тёмная</button>
   </div>
-  <div class="actions">
-    <div class="import-group">
-      <select id="importSelect" class="import-select">
-      <option value="" selected>↧ Импорт файлов</option>
-      <option value="excel">Смета (Excel/CSV)</option>
-      <option value="json">Проект (JSON)</option>
-    </select>
-    <span class="muted small" id="budgetName" hidden></span>
+  <main class="card">
+    <img src="logo.png" alt="Без границ" class="logo" />
+    <div class="brand">Студия декора и флористики<b>БЕЗ ГРАНИЦ</b></div>
+    <p class="tagline">Отчёты по мероприятиям: смета, доходы и прибыль, чек-листы, результаты. Импорт Excel, экспорт в PDF и JSON, анализ динамики проектов.</p>
+    <div class="actions">
+      <a href="report.html" class="btn btn-primary">Открыть отчёт →</a>
+      <a href="report.html#dynamics" class="btn btn-ghost">Динамика проектов</a>
     </div>
-    <input type="file" id="excelInput" accept=".xlsx,.xls,.csv" hidden />
-    <input type="file" id="jsonInput" accept=".json,application/json" hidden />
-    <select id="exportSelect" class="import-select">
-      <option value="" selected>↥ Экспорт</option>
-      <option value="excel">Excel</option>
-      <option value="pdf">PDF</option>
-      <option value="json">JSON</option>
-    </select>
-    <label class="autoexport-toggle" title="При закрытии или обновлении страницы автоматически сохранять JSON-копию текущего отчёта в Загрузки">
-      <input type="checkbox" id="autoExportToggle" checked />
-      <span>Автосохранение JSON</span>
-    </label>
-    <button type="button" id="dataInfoBtn" class="btn small" title="Где хранятся ваши данные">ℹ️ Где хранятся данные</button>
-    <button type="button" id="themeToggle" class="btn small" title="Переключить тему">🌙 Тёмная</button>
-  </div>
-</header>
+  </main>
+  <div class="footer">«Без границ» · Студия декора и флористики</div>
 
-<!-- ПЕРЕКЛЮЧАТЕЛЬ РЕЖИМОВ -->
-<nav class="mode-switch-bar">
-  <div class="mode-switch">
-    <button class="mode-btn active" data-mode="report">Проект</button>
-    <button class="mode-btn" data-mode="dynamics">Динамика</button>
-    <button class="mode-btn" data-mode="contractors">Подрядчики</button>
-    <button class="mode-btn" data-mode="projects">База проектов</button>
-  </div>
-</nav>
-
-<!-- ====================== РЕЖИМ «ОТЧЁТ» ====================== -->
-<main id="reportMode" class="page">
-
-  <!-- ВЕРХНЯЯ СТРОКА: хедер + фото слева, крупный логотип справа -->
-<div class="top-row">
-
-  <div class="top-row-left">
-    <!-- Header Info: дата, событие, тип, статус -->
-    <section class="card header-card">
-      <div class="h-labels">
-        <div class="lbl">ДАТА</div>
-        <div class="lbl">СОБЫТИЕ</div>
-      </div>
-      <div class="h-values">
-        <input type="date" id="dateInput" class="val" />
-        <input type="text" id="titleInput" class="val grow" placeholder="Название мероприятия" />
-      </div>
-      <div class="h-labels">
-        <div class="lbl">ТИП ПРАЗДНИКА</div>
-        <div class="lbl">СТАТУС</div>
-      </div>
-      <div class="h-values">
-        <input type="text" id="eventTypeInput" class="val" list="eventTypeList" placeholder="Выберите или введите" />
-        <datalist id="eventTypeList">
-          <option value="Свадьба"></option><option value="Корпоратив"></option>
-          <option value="День рождения"></option><option value="Юбилей"></option>
-          <option value="Выпускной"></option><option value="Промо-акция"></option>
-          <option value="Конференция"></option><option value="Другое"></option>
-        </datalist>
-        <select id="statusInput" class="val">
-          <option value="planned">Запланирован</option>
-          <option value="in_progress">В работе</option>
-          <option value="done">Завершён</option>
-          <option value="cancelled">Отменён</option>
-        </select>
-      </div>
-      <div class="h-labels">
-        <div class="lbl">МЕСТО ПРОВЕДЕНИЯ</div>
-        <div class="lbl">ВРЕМЯ (Ч)</div>
-      </div>
-      <div class="h-values">
-        <input type="text" id="venueInput" class="val" placeholder="Название площадки" />
-        <input type="number" id="durationInput" class="val" min="0" step="1" placeholder="Часов" />
-      </div>
-    </section>
+  <!-- Разовое уведомление при первом визите: все данные хранятся ТОЛЬКО в этом
+       браузере на этом компьютере — см. пояснение в скрипте внизу страницы. -->
+  <div class="welcome-overlay" id="welcomeNotice">
+    <div class="welcome-card">
+      <div class="icon">💾</div>
+      <h2>Прежде чем начать — важно</h2>
+      <p>Всё, что вы впишете на этой странице — даты, суммы, заметки — сохраняется только
+        <b>здесь</b>: на <b>этом компьютере</b>, в <b>этом браузере</b> (программе, через которую
+        вы сейчас смотрите страницу — например, Яндекс Браузер или Chrome).</p>
+      <p>Это как тетрадь на вашем столе — её никто не видит, пока вы сами её кому-то не покажете.</p>
+      <ul>
+        <li>📍 На другом компьютере или телефоне, даже по той же ссылке — здесь будет пусто.</li>
+        <li>🔄 В другом браузере на этом же компьютере — тоже будет пусто.</li>
+        <li>🔒 Никто — ни коллеги, ни мы — не видит и не получает то, что вы вписали.</li>
+      </ul>
+      <p>Чтобы передать записи коллеге или сохранить на всякий случай — в отчёте наверху есть
+        кнопка «Экспорт». Она сохранит файл на компьютер, который можно переслать по почте
+        или в мессенджере.</p>
+      <button type="button" class="btn btn-primary" id="welcomeNoticeOk">Понятно, не показывать больше</button>
+    </div>
   </div>
 
-  <div class="top-row-right">
-    <img src="logo.png" alt="Студия декора и флористики Без границ" class="logo" />
-  </div>
-</div>
-
-<!-- РЯД: ФОТО + ПРЕЗЕНТАЦИЯ (на одном уровне) -->
-<div class="photos-pres-row">
-  <section class="card photos-card">
-    <h2 class="title-photos">Фотографии с мероприятия</h2>
-    <div class="photos-input">
-      <input type="url" id="photosUrl" placeholder="https://disk.yandex.ru/.../фотографии" />
-      <a id="photosOpen" href="#" target="_blank" rel="noopener" class="btn">Открыть фото</a>
-    </div>
-  </section>
-
-  <section class="card pres-card">
-    <div class="pres-header">
-      <h2 class="title-photos">ПРЕЗЕНТАЦИЯ ПРОЕКТА</h2>
-    </div>
-    <div class="photos-input">
-      <input type="text" id="presLink" class="grow" placeholder="вложенный файл или ссылка на диск" />
-      <a id="presOpen" href="#" target="_blank" rel="noopener" class="btn">Открыть</a>
-    </div>
-  </section>
-</div>
-
-  <!-- ДВУХКОЛОНОЧНАЯ СЕТКА 2×2 (единая высота frame в ряду) -->
-  <div class="grid-2x2">
-
-    <!-- Ряд 1: Расходы | Финансы -->
-    <section class="card expenses-card">
-      <h2 class="title-expenses">Расходы</h2>
-      <ul class="expense-list" id="expenseList"></ul>
-      <form class="add-row" id="addExpenseForm">
-        <input type="text" id="expZone" placeholder="Зона (необязательно)" list="expZoneList" />
-        <datalist id="expZoneList"></datalist>
-        <input type="text" id="expTitle" placeholder="+ Добавить статью расходов…" />
-        <input type="number" id="expAmount" placeholder="Сумма" min="0" step="0.01" />
-        <button type="submit" class="btn small">Добавить</button>
-      </form>
-      <div class="photos-input budget-link-row">
-        <input type="url" id="budgetLinkUrl" placeholder="Ссылка на смету (Excel/Google Sheets/Диск)" />
-        <a id="budgetLinkOpen" href="#" target="_blank" rel="noopener" class="btn">Открыть</a>
-      </div>
-    </section>
-
-    <section class="card finances-card">
-      <h2 class="title-finances">ФИНАНСЫ</h2>
-      <div class="fin-list">
-        <div class="fin-row"><span>Предоплата</span><b id="prepaidTotal">0.00</b><span class="cur">руб</span></div>
-        <ul class="pay-list" id="prepaidList"></ul>
-        <form class="add-row pay-add" id="addPrepaidForm">
-          <input type="number" id="prepaidAmount" placeholder="Сумма" min="0" step="0.01" />
-          <input type="date" id="prepaidDate" title="Дата внесения предоплаты (необязательно)" />
-          <select id="prepaidMethod" class="val" title="Способ оплаты">
-            <option value="cash">Нал</option>
-            <option value="cashless">Безнал</option>
-          </select>
-          <button type="submit" class="btn small">Добавить</button>
-        </form>
-        <div class="fin-row"><span>Постоплата</span><b id="postpaidTotal">0.00</b><span class="cur">руб</span></div>
-        <ul class="pay-list" id="postpaidList"></ul>
-        <form class="add-row pay-add" id="addPostpaidForm">
-          <input type="number" id="postpaidAmount" placeholder="Сумма" min="0" step="0.01" />
-          <input type="date" id="postpaidDate" title="Дата постоплаты (необязательно)" />
-          <select id="postpaidMethod" class="val" title="Способ оплаты">
-            <option value="cash">Нал</option>
-            <option value="cashless">Безнал</option>
-          </select>
-          <button type="submit" class="btn small">Добавить</button>
-        </form>
-        <div class="fin-divider"></div>
-        <div class="fin-row total"><span>Общий доход</span><b id="totalIncome">0.00</b><span class="cur">руб</span></div>
-        <div class="fin-subnote muted small" id="incomeSubnote"></div>
-        <div class="fin-row"><span>Расход</span><b id="totalExpense">0.00</b><span class="cur">руб</span></div>
-        <div class="fin-divider"></div>
-        <div class="fin-row total"><span>Прибыль</span><b id="profit">0.00</b><span class="cur">руб</span></div>
-      </div>
-    </section>
-
-    <!-- Ряд 2: Чек-листы | Результаты -->
-    <section class="card checklist-card">
-      <h2 class="title-section">ЧЕК-ЛИСТЫ И ЗАМЕТКИ</h2>
-      <ul class="checklist" id="checklist"></ul>
-      <form class="add-row" id="addCheckForm">
-        <input type="text" id="checkText" placeholder="+ Добавить пункт…" />
-        <button type="submit" class="btn small">Добавить</button>
-      </form>
-      <div class="notes-wrap">
-        <table class="notes-table" id="notesTable">
-          <thead><tr><th>Дата</th><th>Заметка</th><th></th></tr></thead>
-          <tbody id="notesBody"></tbody>
-        </table>
-        <p class="muted small" id="notesEmpty">Заметок пока нет.</p>
-        <form class="add-row" id="addNoteForm">
-          <input type="text" id="noteText" class="grow" placeholder="+ Добавить заметку…" />
-          <button type="submit" class="btn small">Добавить</button>
-        </form>
-      </div>
-    </section>
-
-    <section class="card results-card">
-      <h2 class="title-section">РЕЗУЛЬТАТЫ СОБЫТИЯ</h2>
-      <ul class="result-list" id="resultList"></ul>
-      <form class="add-row" id="addResultForm">
-        <select id="resType">
-          <option value="positive">+ положительный</option>
-          <option value="negative">− отрицательный</option>
-        </select>
-        <input type="text" id="resCategory" placeholder="Категория" />
-        <input type="text" id="resText" class="grow" placeholder="Заметка…" />
-        <button type="submit" class="btn small">Добавить</button>
-      </form>
-    </section>
-
-  </div>
-
-  <!-- Сохранение проекта в «Базу проектов» (localStorage) -->
-  <section class="card project-save-row">
-    <button type="button" id="newProjectBtn" class="btn">+ Новый проект</button>
-    <button type="button" id="saveProjectBtn" class="btn primary">💾 Сохранить проект</button>
-    <span class="muted small" id="saveProjectInfo"></span>
-  </section>
-
-  <footer class="footer">«Без границ» · Студия декора и флористики</footer>
-</main>
-
-<!-- ====================== РЕЖИМ «ДИНАМИКА» ====================== -->
-<main id="dynamicsMode" class="page" hidden>
-  <section class="dyn-intro">
-    <h2 class="title-photos">Динамика проектов</h2>
-    <p class="muted">Загрузите несколько JSON-отчётов, чтобы увидеть динамику по месяцам, типам праздника, статусам и статьям расходов.</p>
-  </section>
-  <section class="dyn-toolbar">
-    <div class="ms-wrap" id="projMsWrap" hidden>
-      <button type="button" class="ms-trigger" id="projMsTrigger">Все проекты базы ▾</button>
-      <div class="ms-drop" id="projMsDrop" hidden>
-        <label class="ms-all"><input type="checkbox" value="" checked /> Все проекты базы</label>
-        <div class="ms-list" id="projMsList"></div>
-      </div>
-    </div>
-    <label class="btn">↧ Загрузить отчёты (JSON)<input type="file" id="dynJsonInput" accept=".json,application/json" hidden multiple /></label>
-    <button class="btn" id="clearDynBtn">Очистить</button>
-    <span class="muted small" id="dynCount">Загружено: 0</span>
-  </section>
-
-  <!-- KPI: суммарные метрики по всем загруженным отчётам -->
-  <section class="kpi-grid">
-    <div class="kpi-card"><div class="kpi-label">ПРОЕКТОВ</div><div class="kpi-value" id="kpiCount">0</div></div>
-    <div class="kpi-card"><div class="kpi-label">ОБЩИЙ ДОХОД</div><div class="kpi-value" id="kpiIncome">0.00 <span class="cur">руб</span></div></div>
-    <div class="kpi-card"><div class="kpi-label">ОБЩИЙ РАСХОД</div><div class="kpi-value" id="kpiExpense">0.00 <span class="cur">руб</span></div></div>
-    <div class="kpi-card pos"><div class="kpi-label">ОБЩАЯ ПРИБЫЛЬ</div><div class="kpi-value" id="kpiProfit">0.00 <span class="cur">руб</span></div></div>
-  </section>
-
-  <div id="dynEmpty" class="chart-empty">Нет данных. Загрузите JSON-отчёты, чтобы увидеть графики.</div>
-  <section class="dyn-grid" id="dynGrid" hidden>
-    <div class="chart-card">
-      <div class="chart-card-head">
-        <h3 id="chartMonthTitle">Прибыль по месяцам</h3>
-        <button type="button" class="btn small" id="monthChartBackBtn" hidden>← Вернуться к графику годов</button>
-      </div>
-      <canvas id="chartMonth"></canvas>
-    </div>
-    <div class="chart-card"><h3>По типам праздника</h3><canvas id="chartType"></canvas></div>
-    <div class="chart-card"><h3>По статусам</h3><canvas id="chartStatus"></canvas></div>
-    <div class="chart-card"><h3>Структура расходов (среднее)</h3><canvas id="chartExpenses"></canvas></div>
-  </section>
-  <section class="dyn-table-wrap">
-    <h3>Сводная таблица отчётов</h3>
-    <table class="dyn-table" id="dynTable">
-      <thead><tr><th>Дата</th><th>Событие</th><th>Тип</th><th>Статус</th><th>Доход</th><th>Расход</th><th>Прибыль</th></tr></thead>
-      <tbody></tbody>
-    </table>
-  </section>
-
-  <!-- Аналитика по подрядчикам -->
-  <section class="card" style="margin-top:18px">
-    <h3 class="title-section" style="font-size:20px;margin-bottom:12px">Аналитика по подрядчикам</h3>
-    <p class="muted small" style="margin-bottom:12px">Анализ по всем загруженным отчётам + текущему.</p>
-    <div class="contr-analytics-controls">
-      <div class="ms-wrap" id="contrMsWrap">
-        <button class="ms-trigger" id="contrMsTrigger">Все подрядчики ▾</button>
-        <div class="ms-drop" id="contrMsDrop" hidden>
-          <label class="ms-all"><input type="checkbox" value="" checked /> Все подрядчики</label>
-          <div class="ms-list" id="contrMsList"></div>
-        </div>
-      </div>
-      <select id="dynContrItemFilter"><option value="">Все наименования</option></select>
-    </div>
-    <div id="dynContrAnalResults"></div>
-  </section>
-</main>
-
-<!-- ====================== РЕЖИМ «ПОДРЯДЧИКИ» ====================== -->
-<main id="contractorsMode" class="page" hidden>
-  <section class="dyn-intro">
-    <h2 class="title-section">Подрядчики</h2>
-    <p class="muted">Управление подрядчиками и аналитика по их услугам.</p>
-  </section>
-
-  <!-- Форма добавления / редактирования подрядчика -->
-  <section class="card" style="margin-bottom:18px">
-    <div class="contractor-form">
-      <input type="text" id="contrName" placeholder="Наименование подрядчика" />
-      <input type="text" id="contrPhone" placeholder="+7 (900) 123-45-67" inputmode="tel" />
-      <input type="text" id="contrResp" placeholder="Ответственный" />
-      <select id="contrPay">
-        <option value="cash">Наличные</option>
-        <option value="transfer">Перевод</option>
-        <option value="sbp">СБП</option>
-        <option value="invoice">Счёт через компанию</option>
-      </select>
-      <input type="text" id="contrAccount" placeholder="Расчётный счёт" />
-      <button class="btn" id="contrSaveBtn">Сохранить</button>
-    </div>
-  </section>
-
-  <!-- Панель: загрузка / экспорт базы подрядчиков -->
-  <section class="dyn-toolbar" style="margin-bottom:18px">
-    <button class="btn" id="contrLoadBaseBtn">↧ Загрузить базу подрядчиков</button>
-    <button class="btn" id="contrExportBaseBtn">↥ Экспорт базы (JSON)</button>
-    <span class="muted small" id="contrCountInfo"></span>
-  </section>
-
-  <!-- Таблица подрядчиков -->
-  <section class="card">
-    <div class="contr-table-wrap">
-      <table class="contr-table" id="contrTable">
-        <thead>
-          <tr>
-            <th>Наименование</th>
-            <th>Телефон</th>
-            <th>Ответственный</th>
-            <th>Способ оплаты</th>
-            <th>Расчётный счёт</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody id="contrBody"></tbody>
-      </table>
-    </div>
-    <p class="muted small" id="contrEmpty" style="margin:12px 0 0">Нет добавленных подрядчиков.</p>
-  </section>
-</main>
-
-<!-- ====================== РЕЖИМ «БАЗА ПРОЕКТОВ» ====================== -->
-<main id="projectsMode" class="page" hidden>
-  <section class="dyn-intro">
-    <h2 class="title-section">База проектов</h2>
-    <p class="muted">Все проекты, сохранённые кнопкой «Сохранить проект», хранятся здесь (в этом браузере). Двойной клик по строке открывает проект для просмотра и редактирования.</p>
-  </section>
-
-  <section class="dyn-toolbar">
-    <label class="btn">↧ Импортировать базу (JSON)<input type="file" id="projectsImportInput" accept=".json,application/json" hidden multiple /></label>
-    <button class="btn" id="projectsExportBtn">↥ Экспорт всей базы (JSON)</button>
-    <button class="btn" id="projectsClearBtn">Очистить базу</button>
-    <span class="muted small" id="projectsCountInfo">Всего в базе: 0</span>
-  </section>
-
-  <section class="card">
-    <div class="dyn-table-wrap">
-      <table class="dyn-table" id="projectsTable">
-        <thead>
-          <tr>
-            <th>Событие</th><th>Дата</th><th>Статус</th>
-            <th>Предоплата</th><th>Доход</th><th>Расход</th><th>Прибыль</th><th></th>
-          </tr>
-        </thead>
-        <tbody id="projectsBody"></tbody>
-      </table>
-    </div>
-    <p class="muted small" id="projectsEmpty" style="margin:12px 0 0">В базе пока нет сохранённых проектов.</p>
-  </section>
-</main>
-
-<!-- Скрытый шаблон для PDF-экспорта — заполняется данными и «фотографируется» html2canvas -->
-<div id="pdfExportRoot"></div>
-
-<script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/exceljs@4.4.0/dist/exceljs.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
-<script src="contractors-base.js"></script>
-<script src="app.js?v=8"></script>
-<script>
-document.getElementById('importSelect')?.addEventListener('change', function(){
-  if (this.value === 'excel') document.getElementById('excelInput').click();
-  else if (this.value === 'json') document.getElementById('jsonInput').click();
-  this.value = '';
-});
-document.getElementById('dataInfoBtn')?.addEventListener('click', function(){
-  if (typeof window.__bgShowWelcomeNotice === 'function') window.__bgShowWelcomeNotice();
-});
-document.getElementById('exportSelect')?.addEventListener('change', function(){
-  if (this.value === 'excel') exportExcel();
-  else if (this.value === 'pdf') exportPDF();
-  else if (this.value === 'json') exportJSON();
-  this.value = '';
-});
-// автоэкспорт JSON при закрытии страницы (не срабатывает при переключении вкладок) —
-// можно выключить чекбоксом «Автосохранение JSON» в топбаре (хранится в localStorage,
-// по умолчанию включено).
-window.addEventListener('beforeunload', () => {
-  if (typeof buildSnapshot !== 'function') return;
-  if (typeof isAutoExportEnabled === 'function' && !isAutoExportEnabled()) return;
-  try {
-    const snap = buildSnapshot();
-    const json = JSON.stringify(snap, null, 2);
-    const blob = new Blob([json], { type: 'application/json' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    const dateStr = typeof todayLocalISO === 'function' ? todayLocalISO() : new Date().toISOString().slice(0, 10);
-    a.download = 'report-' + (snap.report?.title || 'untitled') + '-' + dateStr + '.json';
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
-  } catch (_) {}
-});
-
-/* Если app.js по той же причине, что и styles.css (антивирус при первом открытии
-   файла двойным кликом сразу после распаковки — см. предупреждение в начале
-   страницы), не успел загрузиться или выполниться до конца — HTML и CSS на месте,
-   страница выглядит обычной, но ВСЕ кнопки (импорт/экспорт файлов, сохранение
-   проекта, переключение вкладок и т.д.) молча ничего не делают: обработчики на
-   них просто не были навешаны, а window.init() из app.js их и не навешает. Явной
-   ошибки при этом нигде не появляется — ни в alert, ни на экране. app.js в конце
-   своей инициализации выставляет window.__appReady = true; эта проверка не даёт
-   такому «тихому» сбою остаться незамеченным. */
-(function () {
-  function appReady() { return window.__appReady === true; }
-  setTimeout(function () {
-    if (appReady()) return;
-    if (!window.__bgAssetWarn) return; // верхняя проверка почему-то не подключилась — не ломаем страницу
-    window.__bgAssetWarn.showBanner('⚠️ Скрипты страницы (app.js) ещё не загрузились — кнопки и формы пока не работают. Обычно это временно, например антивирус проверяет файлы при первом открытии. Подождите несколько секунд: если само не исправится, обновите страницу.');
-    var tries = 0;
-    var poll = setInterval(function () {
-      tries++;
-      if (window.__bgAssetWarn.allReady()) {
-        var b = document.getElementById('assetWarnBanner');
-        if (b) b.remove();
-        clearInterval(poll);
-      } else if (tries === 20) { // ~20с прошло, самостоятельно не исправилось
-        window.__bgAssetWarn.showBanner('⚠️ Скрипт app.js так и не загрузился. Проверьте, что файл app.js лежит рядом с index.html, и обновите страницу.');
+  <script>
+    // Тема общая с index.html — тот же ключ localStorage (bg-theme-v1), без зависимости от app.js
+    (function () {
+      var THEME_KEY = 'bg-theme-v1';
+      var btn = document.getElementById('themeToggle');
+      function apply(theme) {
+        var isLight = theme === 'light';
+        if (isLight) document.documentElement.setAttribute('data-theme', 'light');
+        else document.documentElement.removeAttribute('data-theme');
+        btn.textContent = isLight ? '☀️ Светлая' : '🌙 Тёмная';
+        try { localStorage.setItem(THEME_KEY, isLight ? 'light' : 'dark'); } catch (e) {}
       }
-    }, 1000);
-  }, 2500); // app.js заметно больше styles.css — даём чуть больше времени, прежде чем бить тревогу
-})();
-</script>
+      var saved = 'dark';
+      try { saved = localStorage.getItem(THEME_KEY) || 'dark'; } catch (e) {}
+      apply(saved);
+      btn.addEventListener('click', function () {
+        apply(document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light');
+      });
+    })();
+    // Уведомление «где хранятся данные» — тот же ключ localStorage, что и на index.html,
+    // поэтому если пользователь уже закрыл его на одной странице, на другой оно тоже не
+    // появится повторно. Кнопка «ℹ️» в топбаре открывает его заново в любой момент.
+    (function () {
+      var KEY = 'bg-welcome-notice-v1';
+      var overlay = document.getElementById('welcomeNotice');
+      var okBtn = document.getElementById('welcomeNoticeOk');
+      var infoBtn = document.getElementById('dataInfoBtn');
+      function show() { overlay.classList.add('visible'); }
+      function hide() { overlay.classList.remove('visible'); }
+      var seen = false;
+      try { seen = localStorage.getItem(KEY) === '1'; } catch (e) {}
+      if (!seen) show();
+      okBtn.addEventListener('click', function () {
+        try { localStorage.setItem(KEY, '1'); } catch (e) {}
+        hide();
+      });
+      infoBtn.addEventListener('click', show);
+    })();
+  </script>
 </body>
 </html>
