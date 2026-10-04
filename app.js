@@ -1816,7 +1816,11 @@ function renderProjectsBase() {
       + (c.positive ? `<span class="p">＋${c.positive}</span>` : '')
       + (c.negative ? `<span class="m">−${c.negative}</span>` : '') + '</button>');
     const countsCell = counts.length ? `<span class="rec-counts">${counts.join('')}</span>` : '<span class="rec-counts"><span class="none">—</span></span>';
-    return `<tr data-id="${p.id}" title="Двойной клик — открыть проект">
+    // проект, который сейчас открыт во вкладке «Проект», подсвечиваем в списке.
+    // Связь есть только у проектов, открытых/сохранённых из базы (projectBaseId) —
+    // у нового или импортированного JSON-отчёта её нет, и подсветки не будет.
+    const isCurrent = !!state.projectBaseId && p.id === state.projectBaseId;
+    return `<tr data-id="${p.id}" class="${isCurrent ? 'current' : ''}" title="${isCurrent ? 'Этот проект сейчас открыт во вкладке «Проект»' : 'Двойной клик — открыть проект'}">
       <td>${escapeHtml(r.title || '—')}</td>
       <td>${escapeHtml(fmtDate(r.date) || '—')}</td>
       <td>${escapeHtml(STATUS_LABELS[r.status] || r.status || '—')}</td>
@@ -2081,7 +2085,9 @@ function switchMode(mode) {
   $('#projectsMode').hidden = !isProjects;
   $$('.mode-btn').forEach(b => b.classList.toggle('active', b.dataset.mode === mode));
   if (isDyn) { maybeAutoLoadDynamicsFromBase(); renderDynamics(); }
-  if (isProjects) renderProjectsBase();
+  // на вкладку «База проектов» всегда возвращаемся к списку проектов (а не к ленте
+  // записей, если пользователь уходил из неё) — в списке видно, какой проект открыт
+  if (isProjects) { switchProjectsView('table'); renderProjectsBase(); }
   if (isContr) renderContractors();
   updateModeBarVisibility();
 }

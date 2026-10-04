@@ -330,6 +330,11 @@ option{background:var(--card-bg);color:var(--white)}
 #dynamicsMode .dyn-table td,#projectsMode .dyn-table td{color:var(--dyn-text-2);font-variant-numeric:tabular-nums}
 #projectsMode .dyn-table tbody tr{cursor:pointer}
 #projectsMode .dyn-table tbody tr:hover{background:var(--hover-fill-soft)}
+/* строка проекта, открытого сейчас во вкладке «Проект». Фон вешаем на ячейки, а не на
+   строку: у таблицы border-collapse, и фон/тень на самом <tr> в этом режиме рисуются
+   ненадёжно. */
+#projectsMode .dyn-table tbody tr.current td{background:var(--hover-fill)}
+#projectsMode .dyn-table tbody tr.current td:first-child{box-shadow:inset 3px 0 0 var(--accent)}
 
 /* ===== База проектов: переключатель «Таблица / Записи» ===== */
 #projectsMode .proj-view-switch{display:flex;gap:2px;background:var(--dyn-bg);padding:3px;border-radius:8px;margin-left:auto}
