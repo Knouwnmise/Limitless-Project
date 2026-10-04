@@ -1709,7 +1709,22 @@ function importProjectsBaseFiles(files) {
         else throw new Error('не найдено ни поле "projects", ни поле "report"');
 
         incoming.forEach(p => {
-          const id = p.id || uid();
+          // Экспорт ОДНОГО проекта (кнопка «Экспорт → JSON» на вкладке «Проект») не несёт
+          // своего id записи базы — buildSnapshot() его не добавляет. Раньше при отсутствии
+          // p.id всегда генерировался новый случайный uid(), и повторный импорт того же файла
+          // (или того же события из другого файла) создавал дубль, а не обновлял существующую
+          // запись. Теперь для файлов без id ищем уже сохранённый проект с той же датой и
+          // названием события — это тот же случай, что считается «совпадением» при сохранении
+          // текущего отчёта кнопкой «Сохранить проект» (через state.projectBaseId), только для
+          // данных, пришедших извне, такой привязки нет и приходится сопоставлять по содержимому.
+          let id = p.id;
+          if (!id) {
+            const date = (p.report && p.report.date) || '';
+            const title = (p.report && p.report.title) || '';
+            const existing = (date || title) && projectsBase.find(x =>
+              (x.report && x.report.date) === date && (x.report && x.report.title) === title);
+            id = existing ? existing.id : uid();
+          }
           const entry = { id, savedAt: p.savedAt || new Date().toISOString(), label: p.label || (p.report && p.report.title) || 'Без названия', report: p.report || {}, contractors: p.contractors || [] };
           const idx = projectsBase.findIndex(x => x.id === id);
           if (idx !== -1) { projectsBase[idx] = entry; updated++; } else { projectsBase.push(entry); added++; }
