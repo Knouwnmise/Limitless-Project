@@ -312,6 +312,15 @@ option{background:var(--card-bg);color:var(--white)}
 #dynamicsMode .chart-switch-btn:hover:not(.active){color:var(--dyn-text)}
 #dynamicsMode .chart-select{font-family:inherit;font-size:12px;font-weight:700;color:var(--dyn-text);
   background:var(--dyn-bg);border:1px solid var(--dyn-border);border-radius:7px;padding:6px 10px;cursor:pointer}
+/* Select вместо заголовка графика «Доход/Расход/Прибыль» — экономит место и сразу
+   показывает, что выбор показателя влияет именно на заголовок/график, а не на что-то
+   отдельное рядом с ним. */
+#dynamicsMode .chart-title-row{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;min-width:0}
+#dynamicsMode .chart-title-select{font-family:inherit;font-size:15px;font-weight:700;color:var(--dyn-text-2);
+  background:transparent;border:0;border-bottom:1px dashed var(--dyn-border-2);border-radius:0;padding:0 18px 2px 0;
+  cursor:pointer;max-width:100%}
+#dynamicsMode .chart-title-select:hover{color:var(--dyn-text);border-bottom-color:var(--accent)}
+#dynamicsMode .chart-title-period{font-size:13px;color:var(--slot)}
 #dynamicsMode .chart-empty{padding:30px;text-align:center;color:var(--slot);background:var(--dyn-panel);border:1px dashed var(--dyn-border-2);border-radius:10px;margin-bottom:16px}
 #dynamicsMode .dyn-table-wrap,#projectsMode .dyn-table-wrap{overflow:auto;margin-top:16px}
 #dynamicsMode .dyn-table-wrap h3,#projectsMode .dyn-table-wrap h3{color:var(--dyn-text-2);font-size:15px;margin:0 0 8px}

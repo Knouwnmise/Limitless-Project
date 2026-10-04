@@ -411,14 +411,16 @@
   <section class="dyn-grid" id="dynGrid" hidden>
     <div class="chart-card">
       <div class="chart-card-head">
-        <h3 id="chartMonthTitle">Доход и расход по месяцам</h3>
-        <div class="chart-toggles">
-          <select id="ieMetricSelect" class="chart-select">
+        <div class="chart-title-row">
+          <select id="ieMetricSelect" class="chart-title-select">
             <option value="income">Доход</option>
             <option value="profit">Прибыль</option>
             <option value="expense">Расход</option>
-            <option value="all" selected>Все</option>
+            <option value="all" selected>Доход, расход и прибыль</option>
           </select>
+          <span class="chart-title-period" id="chartMonthPeriod">по годам</span>
+        </div>
+        <div class="chart-toggles">
           <div class="chart-switch" id="ieUnitsSwitch">
             <button type="button" class="chart-switch-btn active" data-units="currency">₽</button>
             <button type="button" class="chart-switch-btn" data-units="percent">%</button>

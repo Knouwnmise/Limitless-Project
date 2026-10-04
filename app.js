@@ -1508,7 +1508,6 @@ function renderDynTable() {
 
 let dynIEMetric = 'all';      // 'income' | 'profit' | 'expense' | 'all' — что показывает график
 let dynIEUnits = 'currency';  // 'currency' | 'percent' — в рублях или в % от дохода периода
-const IE_METRIC_LABELS = { income: 'Доход', profit: 'Прибыль', expense: 'Расход', all: 'Доход, расход и прибыль' };
 const IE_NEUTRAL_COLOR = '#7a8cff'; // цвет «Прибыли», когда она показана ВМЕСТЕ с доходом/расходом (не по знаку +/-)
 
 /** График «Доход/Расход/Прибыль по месяцам» (показатель выбирается в select, единицы —
@@ -1533,12 +1532,11 @@ function renderMonthProfitChart(canvasEl, txtColor, gridColor, posColor, negColo
   // если выбранный ранее год исчез из текущей выборки — сбрасываем drill-down
   if (monthChartYearFilter && !years.includes(monthChartYearFilter)) monthChartYearFilter = null;
 
-  const titleEl = $('#chartMonthTitle');
+  const periodEl = $('#chartMonthPeriod');
   const backBtn = $('#monthChartBackBtn');
   const showYearsView = years.length > 1 && !monthChartYearFilter;
   if (backBtn) backBtn.hidden = !(years.length > 1 && monthChartYearFilter);
 
-  const metricLabel = IE_METRIC_LABELS[dynIEMetric];
   const isPercent = dynIEUnits === 'percent';
   const unitSuffix = isPercent ? ', % от дохода' : ', руб';
   const showIncome = dynIEMetric === 'income' || dynIEMetric === 'all';
@@ -1571,7 +1569,7 @@ function renderMonthProfitChart(canvasEl, txtColor, gridColor, posColor, negColo
       byYear[y].expense += byMonth[m].expense;
     });
     const yearLabels = Object.keys(byYear).sort();
-    if (titleEl) titleEl.textContent = `${metricLabel} по годам`;
+    if (periodEl) periodEl.textContent = 'по годам';
     charts.month = new Chart(canvasEl, {
       type: 'bar',
       data: { labels: yearLabels, datasets: buildDatasets(yearLabels, byYear) },
@@ -1590,7 +1588,7 @@ function renderMonthProfitChart(canvasEl, txtColor, gridColor, posColor, negColo
 
   const monthKeys = monthChartYearFilter ? Object.keys(byMonth).filter(m => m.startsWith(monthChartYearFilter)) : Object.keys(byMonth);
   const months = monthKeys.sort();
-  if (titleEl) titleEl.textContent = monthChartYearFilter ? `${metricLabel} по месяцам — ${monthChartYearFilter}` : `${metricLabel} по месяцам`;
+  if (periodEl) periodEl.textContent = monthChartYearFilter ? `по месяцам — ${monthChartYearFilter}` : 'по месяцам';
   charts.month = new Chart(canvasEl, {
     type: 'bar',
     data: { labels: months, datasets: buildDatasets(months, byMonth) },
