@@ -1,0 +1,220 @@
+{
+  "schemaVersion": "1.3",
+  "exportedAt": "2025-10-24T21:00:00.000Z",
+  "label": "День рождения — День рождения 40 лет (2025-10-25)",
+  "report": {
+    "date": "2025-10-25",
+    "title": "День рождения 40 лет",
+    "eventType": "День рождения",
+    "status": "in_progress",
+    "venue": "Загородный клуб «Onego»",
+    "durationHours": "9",
+    "budgetSource": "smeta.xlsx",
+    "presentation": {
+      "url": ""
+    },
+    "photosUrl": "https://disk.example.com/photos-9",
+    "expenses": [
+      {
+        "id": "rc9ua5gc1",
+        "title": "Фотограф",
+        "description": "Съёмка мероприятия",
+        "qty": 1,
+        "price": 34714,
+        "amount": 34714,
+        "currency": "руб",
+        "isCustom": false,
+        "zone": "Фотозона",
+        "contractorId": "cjopdk36p"
+      },
+      {
+        "id": "ro5xhetk8",
+        "title": "Каркас фотозоны",
+        "description": "Деревянный каркас, баннер",
+        "qty": 1,
+        "price": 38491,
+        "amount": 38491,
+        "currency": "руб",
+        "isCustom": false,
+        "zone": "Фотозона",
+        "contractorId": "cf1rvf0g8"
+      },
+      {
+        "id": "rmtzfvzzi",
+        "title": "Генератор",
+        "description": "Резервное питание",
+        "qty": 1,
+        "price": 19115,
+        "amount": 19115,
+        "currency": "руб",
+        "isCustom": false,
+        "zone": "Техническая зона",
+        "contractorId": "ctq0ynodt"
+      },
+      {
+        "id": "r0p8u61v3",
+        "title": "Проектор/экран",
+        "description": "Аренда на мероприятие",
+        "qty": 2,
+        "price": 10671,
+        "amount": 21342,
+        "currency": "руб",
+        "isCustom": false,
+        "zone": "Техническая зона",
+        "contractorId": "cagk03nfb"
+      },
+      {
+        "id": "rhktu0m2l",
+        "title": "Пиротехника",
+        "description": "Холодный фейерверк",
+        "qty": 1,
+        "price": 31330,
+        "amount": 31330,
+        "currency": "руб",
+        "isCustom": false,
+        "zone": "Техническая зона",
+        "contractorId": "cl09ixsgf"
+      },
+      {
+        "id": "rcb5dzuo4",
+        "title": "Ведущий",
+        "description": "Программа мероприятия",
+        "qty": 1,
+        "price": 28170,
+        "amount": 28170,
+        "currency": "руб",
+        "isCustom": false,
+        "zone": "Сцена",
+        "contractorId": "cdasfzyw2"
+      },
+      {
+        "id": "ruy69c7a6",
+        "title": "Артисты",
+        "description": "Шоу-программа",
+        "qty": 1,
+        "price": 52499,
+        "amount": 52499,
+        "currency": "руб",
+        "isCustom": false,
+        "zone": "Сцена",
+        "contractorId": "co8isblsr"
+      }
+    ],
+    "income": {
+      "prepaid": 145552,
+      "postpaid": 145551,
+      "total": 291103
+    },
+    "paymentMethod": "cashless",
+    "cashlessMarkupPercent": 10,
+    "checklist": [
+      {
+        "id": "r3ejk0lwr",
+        "text": "Подписать договор",
+        "done": true
+      },
+      {
+        "id": "rufwfysko",
+        "text": "Прогон сценария",
+        "done": true
+      },
+      {
+        "id": "re8z6e3of",
+        "text": "Отправить тайминг монтажа",
+        "done": true
+      },
+      {
+        "id": "r4eckpv6j",
+        "text": "Согласовать меню",
+        "done": true
+      }
+    ],
+    "notes": "Площадка: Йошкар-Ола. Клиент доволен результатом.",
+    "results": [
+      {
+        "id": "r6i0fvpaa",
+        "type": "negative",
+        "category": "Подрядчики",
+        "text": "Один из подрядчиков привёз материалы позже срока"
+      },
+      {
+        "id": "rragbznjb",
+        "type": "negative",
+        "category": "Логистика",
+        "text": "Задержка монтажа на 30-40 минут"
+      }
+    ]
+  },
+  "contractors": [
+    {
+      "id": "cf1rvf0g8",
+      "name": "Декор Студия Йошкар-Ола",
+      "phone": "89634281834",
+      "responsible": "Игорь",
+      "paymentMethod": "sbp",
+      "account": "",
+      "city": "Йошкар-Ола",
+      "category": "Декор и флористика"
+    },
+    {
+      "id": "cagk03nfb",
+      "name": "Аренда Техники Йошкар-Ола",
+      "phone": "89505492347",
+      "responsible": "Артём",
+      "paymentMethod": "cash",
+      "account": "",
+      "city": "Йошкар-Ола",
+      "category": "Проекторы и экраны"
+    },
+    {
+      "id": "ctq0ynodt",
+      "name": "Генератор Про Йошкар-Ола",
+      "phone": "89504456774",
+      "responsible": "Денис",
+      "paymentMethod": "cash",
+      "account": "",
+      "city": "Йошкар-Ола",
+      "category": "Генераторы и питание"
+    },
+    {
+      "id": "cjopdk36p",
+      "name": "Light Photo Йошкар-Ола",
+      "phone": "89502623590",
+      "responsible": "Денис",
+      "paymentMethod": "sbp",
+      "account": "",
+      "city": "Йошкар-Ола",
+      "category": "Фотосъёмка"
+    },
+    {
+      "id": "cdasfzyw2",
+      "name": "Ивент Шоу Йошкар-Ола",
+      "phone": "89632470628",
+      "responsible": "Сергей",
+      "paymentMethod": "invoice",
+      "account": "40702810160526188444",
+      "city": "Йошкар-Ола",
+      "category": "Артисты и ведущие"
+    },
+    {
+      "id": "co8isblsr",
+      "name": "Арт Группа Йошкар-Ола",
+      "phone": "89206557820",
+      "responsible": "Тимур",
+      "paymentMethod": "transfer",
+      "account": "40702810938522942137",
+      "city": "Йошкар-Ола",
+      "category": "Артисты и ведущие"
+    },
+    {
+      "id": "cl09ixsgf",
+      "name": "Пиро Шоу Йошкар-Ола",
+      "phone": "89507704469",
+      "responsible": "Сергей",
+      "paymentMethod": "cash",
+      "account": "",
+      "city": "Йошкар-Ола",
+      "category": "Пиротехника и спецэффекты"
+    }
+  ]
+}

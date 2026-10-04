@@ -1,0 +1,31 @@
+{
+  "schemaVersion": "1.2",
+  "exportedAt": "2026-03-05T10:00:00Z",
+  "label": "Корпоратив IT-Co — март 2026",
+  "report": {
+    "date": "2026-03-04",
+    "title": "Корпоратив IT-Co",
+    "eventType": "Корпоратив",
+    "status": "done",
+    "budgetSource": "smeta_itco.xlsx",
+    "presentation": { "kind": "link", "url": "https://disk.yandex.ru/.../itco_pres.pdf" },
+    "photosUrl": "https://disk.yandex.ru/.../itco_photos",
+    "expenses": [
+      { "id": "e1", "title": "Аренда площадки", "amount": 350000, "currency": "руб" },
+      { "id": "e2", "title": "Кейтеринг", "amount": 280000, "currency": "руб" },
+      { "id": "e3", "title": "Оборудование и свет", "amount": 150000, "currency": "руб" },
+      { "id": "e4", "title": "Декор и полиграфия", "amount": 90000, "currency": "руб" },
+      { "id": "e5", "title": "Ведущий и артисты", "amount": 200000, "currency": "руб", "isCustom": true }
+    ],
+    "income": { "prepaid": 500000, "postpaid": 700000, "total": 1200000 },
+    "checklist": [
+      { "id": "c1", "text": "Брифинг с HR заказчика", "done": true },
+      { "id": "c2", "text": "Техрайдер сцены", "done": true }
+    ],
+    "notes": "Конференц-зал + фуршет на 200 человек, брендирование в цветах компании.",
+    "results": [
+      { "id": "r1", "type": "positive", "category": "Команда", "text": "Чёткая работа звукооператоров" },
+      { "id": "r2", "type": "negative", "category": "Кейтеринг", "text": "Не хватило веганских блюд" }
+    ]
+  }
+}

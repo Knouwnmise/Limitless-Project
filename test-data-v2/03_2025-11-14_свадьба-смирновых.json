@@ -1,0 +1,342 @@
+{
+  "schemaVersion": "1.3",
+  "exportedAt": "2025-11-13T21:00:00.000Z",
+  "label": "Свадьба — Свадьба Смирновых (2025-11-14)",
+  "report": {
+    "date": "2025-11-14",
+    "title": "Свадьба Смирновых",
+    "eventType": "Свадьба",
+    "status": "done",
+    "venue": "Ресторан «Онего»",
+    "durationHours": "6",
+    "budgetSource": "",
+    "presentation": {
+      "url": ""
+    },
+    "photosUrl": "",
+    "expenses": [
+      {
+        "id": "rkbyd3ldw",
+        "title": "Каркас фотозоны",
+        "description": "Деревянный каркас, баннер",
+        "qty": 1,
+        "price": 43753,
+        "amount": 43753,
+        "currency": "руб",
+        "isCustom": false,
+        "zone": "Фотозона",
+        "contractorId": "ceag8g9um"
+      },
+      {
+        "id": "r9xjw8shh",
+        "title": "Фотограф",
+        "description": "Съёмка мероприятия",
+        "qty": 1,
+        "price": 33919,
+        "amount": 33919,
+        "currency": "руб",
+        "isCustom": false,
+        "zone": "Фотозона",
+        "contractorId": "cvjwdq9da"
+      },
+      {
+        "id": "rngzpntlo",
+        "title": "Стойка регистрации",
+        "description": "Аренда + оформление",
+        "qty": 2,
+        "price": 6918,
+        "amount": 13836,
+        "currency": "руб",
+        "isCustom": false,
+        "zone": "Входная группа",
+        "contractorId": "cct055xsb"
+      },
+      {
+        "id": "rgerfa0c1",
+        "title": "Флаги/баннеры",
+        "description": "Печать + монтаж",
+        "qty": 1,
+        "price": 14610,
+        "amount": 14610,
+        "currency": "руб",
+        "isCustom": true,
+        "zone": "Входная группа",
+        "contractorId": "c1qwmicqo"
+      },
+      {
+        "id": "rocng4zrb",
+        "title": "Звук зала",
+        "description": "Радиомикрофоны, колонки",
+        "qty": 2,
+        "price": 32199,
+        "amount": 64398,
+        "currency": "руб",
+        "isCustom": true,
+        "zone": "Основной зал",
+        "contractorId": "c6w8jre70"
+      },
+      {
+        "id": "r9woqd6hr",
+        "title": "Свет зала",
+        "description": "Заливка, пятна, гирлянды",
+        "qty": 1,
+        "price": 34735,
+        "amount": 34735,
+        "currency": "руб",
+        "isCustom": false,
+        "zone": "Основной зал",
+        "contractorId": "ccic1izta"
+      },
+      {
+        "id": "r7m76g3oa",
+        "title": "Флористика",
+        "description": "Композиции на стол/сцену",
+        "qty": 3,
+        "price": 12452,
+        "amount": 37356,
+        "currency": "руб",
+        "isCustom": false,
+        "zone": "Основной зал",
+        "contractorId": "c2xm9ysi9"
+      },
+      {
+        "id": "rjrod177x",
+        "title": "Шатёр",
+        "description": "Аренда + монтаж",
+        "qty": 1,
+        "price": 48133,
+        "amount": 48133,
+        "currency": "руб",
+        "isCustom": false,
+        "zone": "Улица/патио",
+        "contractorId": "clgjlgwuh"
+      },
+      {
+        "id": "re3xwdjnr",
+        "title": "Трансфер гостей",
+        "description": "Автобус/легковые",
+        "qty": 2,
+        "price": 28612,
+        "amount": 57224,
+        "currency": "руб",
+        "isCustom": false,
+        "zone": "Улица/патио",
+        "contractorId": "c6qgr6gyo"
+      },
+      {
+        "id": "rsyt2mw7i",
+        "title": "Пиротехника",
+        "description": "Холодный фейерверк",
+        "qty": 1,
+        "price": 41781,
+        "amount": 41781,
+        "currency": "руб",
+        "isCustom": false,
+        "zone": "Техническая зона",
+        "contractorId": "cs3istxx6"
+      },
+      {
+        "id": "ryy9wnsnx",
+        "title": "Проектор/экран",
+        "description": "Аренда на мероприятие",
+        "qty": 1,
+        "price": 17063,
+        "amount": 17063,
+        "currency": "руб",
+        "isCustom": false,
+        "zone": "Техническая зона",
+        "contractorId": "c9mm8qn1y"
+      },
+      {
+        "id": "rsk51k96x",
+        "title": "Генератор",
+        "description": "Резервное питание",
+        "qty": 3,
+        "price": 10203,
+        "amount": 30609,
+        "currency": "руб",
+        "isCustom": false,
+        "zone": "Техническая зона",
+        "contractorId": "cjodsgeaq"
+      }
+    ],
+    "income": {
+      "prepaid": 301293,
+      "postpaid": 236730,
+      "total": 538023
+    },
+    "paymentMethod": "cashless",
+    "cashlessMarkupPercent": 10,
+    "checklist": [
+      {
+        "id": "rrh04mg2g",
+        "text": "Проверить оплату предоплаты",
+        "done": true
+      },
+      {
+        "id": "rfe0kze6r",
+        "text": "Утвердить план рассадки",
+        "done": false
+      },
+      {
+        "id": "r3imt8qz6",
+        "text": "Согласовать смету с клиентом",
+        "done": false
+      },
+      {
+        "id": "rvq8lneql",
+        "text": "Подписать договор",
+        "done": false
+      }
+    ],
+    "notes": "",
+    "results": [
+      {
+        "id": "r6rh8p8p5",
+        "type": "negative",
+        "category": "Подрядчики",
+        "text": "Один из подрядчиков привёз материалы позже срока"
+      },
+      {
+        "id": "rifaab6bv",
+        "type": "positive",
+        "category": "Организация",
+        "text": "Мероприятие прошло по таймингу без накладок"
+      },
+      {
+        "id": "rqhxfe9vo",
+        "type": "positive",
+        "category": "Декор",
+        "text": "Гостям и клиенту понравилось оформление"
+      },
+      {
+        "id": "r64szkng6",
+        "type": "negative",
+        "category": "Техника",
+        "text": "Проблема со звуком в начале программы"
+      }
+    ]
+  },
+  "contractors": [
+    {
+      "id": "c6w8jre70",
+      "name": "АудиоПрокат Чебоксары",
+      "phone": "89271467293",
+      "responsible": "Александр",
+      "paymentMethod": "transfer",
+      "account": "40702810015396056650",
+      "city": "Чебоксары",
+      "category": "Звуковое оборудование"
+    },
+    {
+      "id": "ccic1izta",
+      "name": "Свет Плюс Чебоксары",
+      "phone": "89674232539",
+      "responsible": "Наталья",
+      "paymentMethod": "cash",
+      "account": "",
+      "city": "Чебоксары",
+      "category": "Световое оборудование"
+    },
+    {
+      "id": "cct055xsb",
+      "name": "Аренда Мебели Чебоксары",
+      "phone": "89274928774",
+      "responsible": "Ирина",
+      "paymentMethod": "transfer",
+      "account": "40702810866575507191",
+      "city": "Чебоксары",
+      "category": "Мебель и столы"
+    },
+    {
+      "id": "clgjlgwuh",
+      "name": "Шатёр Сервис Чебоксары",
+      "phone": "89271928063",
+      "responsible": "Елена",
+      "paymentMethod": "sbp",
+      "account": "",
+      "city": "Чебоксары",
+      "category": "Шатры и палатки"
+    },
+    {
+      "id": "c2xm9ysi9",
+      "name": "Флора Декор Чебоксары",
+      "phone": "89059345709",
+      "responsible": "Денис",
+      "paymentMethod": "transfer",
+      "account": "40702810649278914763",
+      "city": "Чебоксары",
+      "category": "Декор и флористика"
+    },
+    {
+      "id": "ceag8g9um",
+      "name": "Декор Студия Чебоксары",
+      "phone": "89675379449",
+      "responsible": "Алексей",
+      "paymentMethod": "transfer",
+      "account": "40702810921545483582",
+      "city": "Чебоксары",
+      "category": "Декор и флористика"
+    },
+    {
+      "id": "c1qwmicqo",
+      "name": "Принт Сервис Чебоксары",
+      "phone": "89056634403",
+      "responsible": "Екатерина",
+      "paymentMethod": "sbp",
+      "account": "",
+      "city": "Чебоксары",
+      "category": "Полиграфия"
+    },
+    {
+      "id": "c9mm8qn1y",
+      "name": "AV Сервис Чебоксары",
+      "phone": "88350213525",
+      "responsible": "Сергей",
+      "paymentMethod": "sbp",
+      "account": "",
+      "city": "Чебоксары",
+      "category": "Проекторы и экраны"
+    },
+    {
+      "id": "cjodsgeaq",
+      "name": "ЭнергоСервис Чебоксары",
+      "phone": "88350168803",
+      "responsible": "Игорь",
+      "paymentMethod": "sbp",
+      "account": "",
+      "city": "Чебоксары",
+      "category": "Генераторы и питание"
+    },
+    {
+      "id": "c6qgr6gyo",
+      "name": "Трансфер Чебоксары",
+      "phone": "88351561077",
+      "responsible": "Дарья",
+      "paymentMethod": "cash",
+      "account": "",
+      "city": "Чебоксары",
+      "category": "Транспорт"
+    },
+    {
+      "id": "cvjwdq9da",
+      "name": "Фото Студия Чебоксары",
+      "phone": "89675327389",
+      "responsible": "Александр",
+      "paymentMethod": "sbp",
+      "account": "",
+      "city": "Чебоксары",
+      "category": "Фотосъёмка"
+    },
+    {
+      "id": "cs3istxx6",
+      "name": "СпецЭффект Чебоксары",
+      "phone": "89675264190",
+      "responsible": "Алексей",
+      "paymentMethod": "cash",
+      "account": "",
+      "city": "Чебоксары",
+      "category": "Пиротехника и спецэффекты"
+    }
+  ]
+}

@@ -1,0 +1,320 @@
+{
+  "schemaVersion": "1.3",
+  "exportedAt": "2025-04-14T21:00:00.000Z",
+  "label": "Конференция — Отраслевой форум (2025-04-15)",
+  "report": {
+    "date": "2025-04-15",
+    "title": "Отраслевой форум",
+    "eventType": "Конференция",
+    "status": "done",
+    "venue": "Лофт «Штаб»",
+    "durationHours": "5",
+    "budgetSource": "smeta.xlsx",
+    "presentation": {
+      "url": "https://disk.example.com/presentation-20"
+    },
+    "photosUrl": "https://disk.example.com/photos-20",
+    "expenses": [
+      {
+        "id": "rmkooxfgt",
+        "title": "Звук зала",
+        "description": "Радиомикрофоны, колонки",
+        "qty": 1,
+        "price": 28812,
+        "amount": 28812,
+        "currency": "руб",
+        "isCustom": false,
+        "zone": "Основной зал",
+        "contractorId": "ckrh2ewk7"
+      },
+      {
+        "id": "r5ddw3ztp",
+        "title": "Свет зала",
+        "description": "Заливка, пятна, гирлянды",
+        "qty": 1,
+        "price": 35940,
+        "amount": 35940,
+        "currency": "руб",
+        "isCustom": false,
+        "zone": "Основной зал",
+        "contractorId": "ccs1d7wi1"
+      },
+      {
+        "id": "r0jkt6ieq",
+        "title": "Шатёр",
+        "description": "Аренда + монтаж",
+        "qty": 1,
+        "price": 79060,
+        "amount": 79060,
+        "currency": "руб",
+        "isCustom": false,
+        "zone": "Улица/патио",
+        "contractorId": "c8ubfw6rv"
+      },
+      {
+        "id": "rrnuonq85",
+        "title": "Трансфер гостей",
+        "description": "Автобус/легковые",
+        "qty": 1,
+        "price": 21384,
+        "amount": 21384,
+        "currency": "руб",
+        "isCustom": false,
+        "zone": "Улица/патио",
+        "contractorId": "c64jqhdie"
+      },
+      {
+        "id": "rzd9gcixz",
+        "title": "Посуда",
+        "description": "Аренда посуды на гостя",
+        "qty": 18,
+        "price": 255,
+        "amount": 4590,
+        "currency": "руб",
+        "isCustom": false,
+        "zone": "Банкетная зона",
+        "contractorId": "ce5c9vztp"
+      },
+      {
+        "id": "ra6prhiw2",
+        "title": "Кейтеринг",
+        "description": "Фуршет/банкетное меню",
+        "qty": 26,
+        "price": 2104,
+        "amount": 54704,
+        "currency": "руб",
+        "isCustom": true,
+        "zone": "Банкетная зона",
+        "contractorId": "cfba4n57b"
+      },
+      {
+        "id": "r98udhowd",
+        "title": "Мебель и текстиль",
+        "description": "Столы, стулья, скатерти",
+        "qty": 13,
+        "price": 2001,
+        "amount": 26013,
+        "currency": "руб",
+        "isCustom": false,
+        "zone": "Банкетная зона",
+        "contractorId": "cj759poss"
+      },
+      {
+        "id": "rk11uwzv6",
+        "title": "Видеограф",
+        "description": "Съёмка + монтаж",
+        "qty": 1,
+        "price": 27297,
+        "amount": 27297,
+        "currency": "руб",
+        "isCustom": false,
+        "zone": "Фотозона",
+        "contractorId": "c6attabqr"
+      },
+      {
+        "id": "rmc37ypej",
+        "title": "Фотограф",
+        "description": "Съёмка мероприятия",
+        "qty": 1,
+        "price": 21522,
+        "amount": 21522,
+        "currency": "руб",
+        "isCustom": true,
+        "zone": "Фотозона",
+        "contractorId": "cecceht16"
+      },
+      {
+        "id": "rxlq9lph1",
+        "title": "Сценический подиум",
+        "description": "Монтаж/демонтаж",
+        "qty": 1,
+        "price": 36354,
+        "amount": 36354,
+        "currency": "руб",
+        "isCustom": false,
+        "zone": "Сцена",
+        "contractorId": "c9d4d3mj7"
+      },
+      {
+        "id": "rvqheqpzi",
+        "title": "Артисты",
+        "description": "Шоу-программа",
+        "qty": 1,
+        "price": 63534,
+        "amount": 63534,
+        "currency": "руб",
+        "isCustom": true,
+        "zone": "Сцена",
+        "contractorId": "c4fneq8rx"
+      }
+    ],
+    "income": {
+      "prepaid": 198008,
+      "postpaid": 297012,
+      "total": 495020
+    },
+    "paymentMethod": "cash",
+    "cashlessMarkupPercent": 12,
+    "checklist": [
+      {
+        "id": "ryhr0l7k2",
+        "text": "Согласовать смету с клиентом",
+        "done": false
+      },
+      {
+        "id": "rn9lo9a21",
+        "text": "Согласовать меню",
+        "done": true
+      },
+      {
+        "id": "rhisfwcye",
+        "text": "Проверить оплату предоплаты",
+        "done": true
+      },
+      {
+        "id": "rtbp9qdn6",
+        "text": "Отправить тайминг монтажа",
+        "done": false
+      }
+    ],
+    "notes": "Площадка: Казань. Клиент доволен результатом.",
+    "results": [
+      {
+        "id": "rjawvvrpr",
+        "type": "positive",
+        "category": "Организация",
+        "text": "Мероприятие прошло по таймингу без накладок"
+      },
+      {
+        "id": "r1gssp13c",
+        "type": "negative",
+        "category": "Техника",
+        "text": "Проблема со звуком в начале программы"
+      },
+      {
+        "id": "rsaxyh5hc",
+        "type": "positive",
+        "category": "Декор",
+        "text": "Гостям и клиенту понравилось оформление"
+      },
+      {
+        "id": "rxmed3xh0",
+        "type": "negative",
+        "category": "Логистика",
+        "text": "Задержка монтажа на 30-40 минут"
+      }
+    ]
+  },
+  "contractors": [
+    {
+      "id": "ckrh2ewk7",
+      "name": "Аренда Звук Казань",
+      "phone": "89174426992",
+      "responsible": "Ирина",
+      "paymentMethod": "sbp",
+      "account": "",
+      "city": "Казань",
+      "category": "Звуковое оборудование"
+    },
+    {
+      "id": "ccs1d7wi1",
+      "name": "Light Pro Казань",
+      "phone": "89173088218",
+      "responsible": "Екатерина",
+      "paymentMethod": "transfer",
+      "account": "40702810913959263575",
+      "city": "Казань",
+      "category": "Световое оборудование"
+    },
+    {
+      "id": "c9d4d3mj7",
+      "name": "Stage Rent Казань",
+      "phone": "89172847052",
+      "responsible": "Ольга",
+      "paymentMethod": "invoice",
+      "account": "40702810161757963732",
+      "city": "Казань",
+      "category": "Сцены и подиумы"
+    },
+    {
+      "id": "cj759poss",
+      "name": "Аренда Мебели Казань",
+      "phone": "89623046764",
+      "responsible": "Тимур",
+      "paymentMethod": "cash",
+      "account": "",
+      "city": "Казань",
+      "category": "Мебель и столы"
+    },
+    {
+      "id": "c8ubfw6rv",
+      "name": "Шатёр Сервис Казань",
+      "phone": "89629986493",
+      "responsible": "Эльвира",
+      "paymentMethod": "cash",
+      "account": "",
+      "city": "Казань",
+      "category": "Шатры и палатки"
+    },
+    {
+      "id": "cfba4n57b",
+      "name": "Кейтеринг Казань",
+      "phone": "89177118474",
+      "responsible": "Александр",
+      "paymentMethod": "cash",
+      "account": "",
+      "city": "Казань",
+      "category": "Кейтеринг"
+    },
+    {
+      "id": "c64jqhdie",
+      "name": "Авто Аренда Казань",
+      "phone": "89623682655",
+      "responsible": "Руслан",
+      "paymentMethod": "invoice",
+      "account": "40702810361998387880",
+      "city": "Казань",
+      "category": "Транспорт"
+    },
+    {
+      "id": "cecceht16",
+      "name": "Light Photo Казань",
+      "phone": "89393323569",
+      "responsible": "Мария",
+      "paymentMethod": "cash",
+      "account": "",
+      "city": "Казань",
+      "category": "Фотосъёмка"
+    },
+    {
+      "id": "c6attabqr",
+      "name": "Видео Продакшн Казань",
+      "phone": "89396438973",
+      "responsible": "Ирина",
+      "paymentMethod": "transfer",
+      "account": "40702810668966063601",
+      "city": "Казань",
+      "category": "Видеосъёмка"
+    },
+    {
+      "id": "c4fneq8rx",
+      "name": "Арт Группа Казань",
+      "phone": "89171336806",
+      "responsible": "Иван",
+      "paymentMethod": "cash",
+      "account": "",
+      "city": "Казань",
+      "category": "Артисты и ведущие"
+    },
+    {
+      "id": "ce5c9vztp",
+      "name": "Текстиль Сервис Казань",
+      "phone": "89875477719",
+      "responsible": "Иван",
+      "paymentMethod": "sbp",
+      "account": "",
+      "city": "Казань",
+      "category": "Текстиль и посуда"
+    }
+  ]
+}

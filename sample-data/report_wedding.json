@@ -1,0 +1,32 @@
+{
+  "schemaVersion": "1.2",
+  "exportedAt": "2026-01-20T10:00:00Z",
+  "label": "Свадьба Ивановы — январь 2026",
+  "report": {
+    "date": "2026-01-18",
+    "title": "Свадьба Ивановы",
+    "eventType": "Свадьба",
+    "status": "done",
+    "budgetSource": "smeta_ivanovy.xlsx",
+    "presentation": { "kind": "link", "url": "https://disk.yandex.ru/.../ivanovy_pres.pdf" },
+    "photosUrl": "https://disk.yandex.ru/.../ivanovy_photos",
+    "expenses": [
+      { "id": "e1", "title": "Аренда площадки", "amount": 180000, "currency": "руб" },
+      { "id": "e2", "title": "Кейтеринг", "amount": 120000, "currency": "руб" },
+      { "id": "e3", "title": "Оборудование и свет", "amount": 55000, "currency": "руб" },
+      { "id": "e4", "title": "Декор и полиграфия", "amount": 95000, "currency": "руб", "isCustom": false }
+    ],
+    "income": { "prepaid": 250000, "postpaid": 250000, "total": 500000 },
+    "checklist": [
+      { "id": "c1", "text": "Заказать флористику", "done": true },
+      { "id": "c2", "text": "Согласовать тайминг банкета", "done": true },
+      { "id": "c3", "text": "Привезти подсветку", "done": false }
+    ],
+    "notes": "Зал на 80 гостей, бело-зелёная палитра, выездная регистрация.",
+    "results": [
+      { "id": "r1", "type": "positive", "category": "Флористика", "text": "Удачное сочетание белых роз и эвкалипта" },
+      { "id": "r2", "type": "positive", "category": "Клиент", "text": "Клиент оставил отзыв 5★" },
+      { "id": "r3", "type": "negative", "category": "Логистика", "text": "Задержка доставки декора на 40 минут" }
+    ]
+  }
+}

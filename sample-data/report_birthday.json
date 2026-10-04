@@ -1,0 +1,30 @@
+{
+  "schemaVersion": "1.2",
+  "exportedAt": "2026-03-25T10:00:00Z",
+  "label": "День рождения Петровой — март 2026",
+  "report": {
+    "date": "2026-03-22",
+    "title": "День рождения Петровой (30 лет)",
+    "eventType": "День рождения",
+    "status": "done",
+    "budgetSource": "smeta_petrova.xlsx",
+    "presentation": { "kind": "link", "url": "" },
+    "photosUrl": "https://disk.yandex.ru/.../petrova_photos",
+    "expenses": [
+      { "id": "e1", "title": "Аренда площадки", "amount": 60000, "currency": "руб" },
+      { "id": "e2", "title": "Кейтеринг", "amount": 75000, "currency": "руб" },
+      { "id": "e3", "title": "Декор и полиграфия", "amount": 45000, "currency": "руб" },
+      { "id": "e4", "title": "Фотограф", "amount": 25000, "currency": "руб", "isCustom": true }
+    ],
+    "income": { "prepaid": 100000, "postpaid": 150000, "total": 250000 },
+    "checklist": [
+      { "id": "c1", "text": "Торт с надписью", "done": true },
+      { "id": "c2", "text": "Плейлист согласован", "done": false }
+    ],
+    "notes": "Камерный формат, 30 гостей, пastiльная палитра.",
+    "results": [
+      { "id": "r1", "type": "positive", "category": "Декор", "text": "Эффектная фотозона из шаров" },
+      { "id": "r2", "type": "positive", "category": "Клиент", "text": "Именинница в восторге" }
+    ]
+  }
+}

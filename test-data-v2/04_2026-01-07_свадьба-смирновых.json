@@ -1,0 +1,237 @@
+{
+  "schemaVersion": "1.3",
+  "exportedAt": "2026-01-06T21:00:00.000Z",
+  "label": "Свадьба — Свадьба Смирновых (2026-01-07)",
+  "report": {
+    "date": "2026-01-07",
+    "title": "Свадьба Смирновых",
+    "eventType": "Свадьба",
+    "status": "in_progress",
+    "venue": "Дом приёмов «Казан»",
+    "durationHours": "8",
+    "budgetSource": "",
+    "presentation": {
+      "url": ""
+    },
+    "photosUrl": "",
+    "expenses": [
+      {
+        "id": "rrw67em39",
+        "title": "Навигация",
+        "description": "Указатели А3/А4",
+        "qty": 3,
+        "price": 6486,
+        "amount": 19458,
+        "currency": "руб",
+        "isCustom": false,
+        "zone": "Входная группа",
+        "contractorId": "cayigle1f"
+      },
+      {
+        "id": "rcp3j751h",
+        "title": "Стойка регистрации",
+        "description": "Аренда + оформление",
+        "qty": 1,
+        "price": 14840,
+        "amount": 14840,
+        "currency": "руб",
+        "isCustom": false,
+        "zone": "Входная группа",
+        "contractorId": "cfuppd5zo"
+      },
+      {
+        "id": "rh10am1s3",
+        "title": "Посуда",
+        "description": "Аренда посуды на гостя",
+        "qty": 9,
+        "price": 200,
+        "amount": 1800,
+        "currency": "руб",
+        "isCustom": true,
+        "zone": "Банкетная зона",
+        "contractorId": "c1pwo60l2"
+      },
+      {
+        "id": "rhh68010e",
+        "title": "Мебель и текстиль",
+        "description": "Столы, стулья, скатерти",
+        "qty": 3,
+        "price": 1057,
+        "amount": 3171,
+        "currency": "руб",
+        "isCustom": false,
+        "zone": "Банкетная зона",
+        "contractorId": "cfuppd5zo"
+      },
+      {
+        "id": "r0f3k1y79",
+        "title": "Кейтеринг",
+        "description": "Фуршет/банкетное меню",
+        "qty": 10,
+        "price": 2195,
+        "amount": 21950,
+        "currency": "руб",
+        "isCustom": false,
+        "zone": "Банкетная зона",
+        "contractorId": "csjb68han"
+      },
+      {
+        "id": "r88m8uqnf",
+        "title": "Сценический подиум",
+        "description": "Монтаж/демонтаж",
+        "qty": 1,
+        "price": 39004,
+        "amount": 39004,
+        "currency": "руб",
+        "isCustom": false,
+        "zone": "Сцена",
+        "contractorId": "c9d4d3mj7"
+      },
+      {
+        "id": "r3sl5dcl5",
+        "title": "Артисты",
+        "description": "Шоу-программа",
+        "qty": 1,
+        "price": 62435,
+        "amount": 62435,
+        "currency": "руб",
+        "isCustom": true,
+        "zone": "Сцена",
+        "contractorId": "cv49o5yo7"
+      },
+      {
+        "id": "r9xqylphy",
+        "title": "Ведущий",
+        "description": "Программа мероприятия",
+        "qty": 1,
+        "price": 57678,
+        "amount": 57678,
+        "currency": "руб",
+        "isCustom": true,
+        "zone": "Сцена",
+        "contractorId": "c4fneq8rx"
+      }
+    ],
+    "income": {
+      "prepaid": 144364,
+      "postpaid": 133259,
+      "total": 277623
+    },
+    "paymentMethod": "cash",
+    "cashlessMarkupPercent": 10,
+    "checklist": [
+      {
+        "id": "rx175h6u5",
+        "text": "Согласовать меню",
+        "done": true
+      },
+      {
+        "id": "rj9yx3b1z",
+        "text": "Финальный созвон с подрядчиками",
+        "done": true
+      },
+      {
+        "id": "rpse6zrxa",
+        "text": "Подписать договор",
+        "done": true
+      },
+      {
+        "id": "rl8prvb5k",
+        "text": "Прогон сценария",
+        "done": true
+      },
+      {
+        "id": "r2bagar4l",
+        "text": "Отправить тайминг монтажа",
+        "done": false
+      }
+    ],
+    "notes": "",
+    "results": [
+      {
+        "id": "r9i8fq1vd",
+        "type": "positive",
+        "category": "Организация",
+        "text": "Мероприятие прошло по таймингу без накладок"
+      },
+      {
+        "id": "rucxwyupf",
+        "type": "negative",
+        "category": "Логистика",
+        "text": "Задержка монтажа на 30-40 минут"
+      }
+    ]
+  },
+  "contractors": [
+    {
+      "id": "c9d4d3mj7",
+      "name": "Stage Rent Казань",
+      "phone": "89172847052",
+      "responsible": "Ольга",
+      "paymentMethod": "invoice",
+      "account": "40702810161757963732",
+      "city": "Казань",
+      "category": "Сцены и подиумы"
+    },
+    {
+      "id": "cfuppd5zo",
+      "name": "Банкет Сервис Казань",
+      "phone": "89625800362",
+      "responsible": "Мария",
+      "paymentMethod": "sbp",
+      "account": "",
+      "city": "Казань",
+      "category": "Мебель и столы"
+    },
+    {
+      "id": "csjb68han",
+      "name": "Банкет Холл Казань",
+      "phone": "89877887202",
+      "responsible": "Екатерина",
+      "paymentMethod": "cash",
+      "account": "",
+      "city": "Казань",
+      "category": "Кейтеринг"
+    },
+    {
+      "id": "cayigle1f",
+      "name": "Полиграфия Казань",
+      "phone": "89629671075",
+      "responsible": "Регина",
+      "paymentMethod": "transfer",
+      "account": "40702810939942558030",
+      "city": "Казань",
+      "category": "Полиграфия"
+    },
+    {
+      "id": "cv49o5yo7",
+      "name": "Ивент Шоу Казань",
+      "phone": "89394129447",
+      "responsible": "Юлия",
+      "paymentMethod": "invoice",
+      "account": "40702810381177732849",
+      "city": "Казань",
+      "category": "Артисты и ведущие"
+    },
+    {
+      "id": "c4fneq8rx",
+      "name": "Арт Группа Казань",
+      "phone": "89171336806",
+      "responsible": "Иван",
+      "paymentMethod": "cash",
+      "account": "",
+      "city": "Казань",
+      "category": "Артисты и ведущие"
+    },
+    {
+      "id": "c1pwo60l2",
+      "name": "Посуда Про Казань",
+      "phone": "89391256213",
+      "responsible": "Андрей",
+      "paymentMethod": "transfer",
+      "account": "40702810002297386096",
+      "city": "Казань",
+      "category": "Текстиль и посуда"
+    }
+  ]
+}

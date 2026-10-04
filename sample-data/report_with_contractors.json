@@ -1,0 +1,25 @@
+{
+  "schemaVersion": "1.2",
+  "exportedAt": "2026-01-20T10:00:00Z",
+  "label": "Свадьба Ивановы (с подрядчиками)",
+  "report": {
+    "date": "2026-01-18",
+    "title": "Свадьба Ивановы",
+    "eventType": "Свадьба",
+    "status": "done",
+    "expenses": [
+      { "id": "e1", "title": "Аренда площадки", "amount": 180000, "contractorId": "c1" },
+      { "id": "e2", "title": "Кейтеринг", "amount": 120000, "contractorId": "c2" },
+      { "id": "e3", "title": "Оборудование и свет", "amount": 55000, "contractorId": "c3" },
+      { "id": "e4", "title": "Декор и полиграфия", "amount": 95000, "contractorId": "c1" }
+    ],
+    "income": { "prepaid": 250000, "postpaid": 250000, "total": 500000 },
+    "checklist": [{ "id": "c1", "text": "Заказать флористику", "done": true }],
+    "results": []
+  },
+  "contractors": [
+    { "id": "c1", "name": "ООО Флора Декор", "phone": "89991234567", "responsible": "Анна", "paymentMethod": "transfer", "account": "40702810100000012345" },
+    { "id": "c2", "name": "Кейтеринг Вкусно", "phone": "89997654321", "responsible": "Игорь", "paymentMethod": "cash", "account": "" },
+    { "id": "c3", "name": "Аренда Звук ООО", "phone": "89993334455", "responsible": "Михаил", "paymentMethod": "invoice", "account": "40702810987650001111" }
+  ]
+}

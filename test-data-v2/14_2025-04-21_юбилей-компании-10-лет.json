@@ -1,0 +1,227 @@
+{
+  "schemaVersion": "1.3",
+  "exportedAt": "2025-04-20T21:00:00.000Z",
+  "label": "Юбилей — Юбилей компании 10 лет (2025-04-21)",
+  "report": {
+    "date": "2025-04-21",
+    "title": "Юбилей компании 10 лет",
+    "eventType": "Юбилей",
+    "status": "planned",
+    "venue": "Лофт «Атмосфера»",
+    "durationHours": "6",
+    "budgetSource": "smeta.xlsx",
+    "presentation": {
+      "url": ""
+    },
+    "photosUrl": "https://disk.example.com/photos-14",
+    "expenses": [
+      {
+        "id": "r80m4h09d",
+        "title": "Навигация",
+        "description": "Указатели А3/А4",
+        "qty": 1,
+        "price": 7895,
+        "amount": 7895,
+        "currency": "руб",
+        "isCustom": false,
+        "zone": "Входная группа",
+        "contractorId": "ckr9t8jvq"
+      },
+      {
+        "id": "rq8tcxvnr",
+        "title": "Стойка регистрации",
+        "description": "Аренда + оформление",
+        "qty": 1,
+        "price": 9956,
+        "amount": 9956,
+        "currency": "руб",
+        "isCustom": false,
+        "zone": "Входная группа",
+        "contractorId": "c7yo8wojo"
+      },
+      {
+        "id": "ra04ljuji",
+        "title": "Пиротехника",
+        "description": "Холодный фейерверк",
+        "qty": 1,
+        "price": 27312,
+        "amount": 27312,
+        "currency": "руб",
+        "isCustom": true,
+        "zone": "Техническая зона",
+        "contractorId": "c4x1i30dt"
+      },
+      {
+        "id": "rcq2az9vp",
+        "title": "Генератор",
+        "description": "Резервное питание",
+        "qty": 2,
+        "price": 14886,
+        "amount": 29772,
+        "currency": "руб",
+        "isCustom": false,
+        "zone": "Техническая зона",
+        "contractorId": "cserg2bop"
+      },
+      {
+        "id": "r8gxfdqkb",
+        "title": "Кейтеринг",
+        "description": "Фуршет/банкетное меню",
+        "qty": 5,
+        "price": 1901,
+        "amount": 9505,
+        "currency": "руб",
+        "isCustom": false,
+        "zone": "Банкетная зона",
+        "contractorId": "coomatcku"
+      },
+      {
+        "id": "rz4jzdmcq",
+        "title": "Мебель и текстиль",
+        "description": "Столы, стулья, скатерти",
+        "qty": 18,
+        "price": 1350,
+        "amount": 24300,
+        "currency": "руб",
+        "isCustom": false,
+        "zone": "Банкетная зона",
+        "contractorId": "cjx7zg230"
+      },
+      {
+        "id": "rxaf4cbhg",
+        "title": "Посуда",
+        "description": "Аренда посуды на гостя",
+        "qty": 22,
+        "price": 187,
+        "amount": 4114,
+        "currency": "руб",
+        "isCustom": false,
+        "zone": "Банкетная зона",
+        "contractorId": "conklw2vd"
+      }
+    ],
+    "income": {
+      "prepaid": 68559,
+      "postpaid": 83794,
+      "total": 152353
+    },
+    "paymentMethod": "cash",
+    "cashlessMarkupPercent": 10,
+    "checklist": [
+      {
+        "id": "rp4itzdq3",
+        "text": "Прогон сценария",
+        "done": true
+      },
+      {
+        "id": "rmfmydc42",
+        "text": "Отправить тайминг монтажа",
+        "done": true
+      },
+      {
+        "id": "rn8eygqfc",
+        "text": "Согласовать меню",
+        "done": true
+      }
+    ],
+    "notes": "",
+    "results": [
+      {
+        "id": "rpbvdjo59",
+        "type": "positive",
+        "category": "Кейтеринг",
+        "text": "Меню отработало хорошо, жалоб не было"
+      },
+      {
+        "id": "ro9374qlo",
+        "type": "positive",
+        "category": "Декор",
+        "text": "Гостям и клиенту понравилось оформление"
+      },
+      {
+        "id": "rkep2174n",
+        "type": "positive",
+        "category": "Организация",
+        "text": "Мероприятие прошло по таймингу без накладок"
+      },
+      {
+        "id": "rs5bv7d0v",
+        "type": "negative",
+        "category": "Логистика",
+        "text": "Задержка монтажа на 30-40 минут"
+      }
+    ]
+  },
+  "contractors": [
+    {
+      "id": "cjx7zg230",
+      "name": "Аренда Мебели Екатеринбург",
+      "phone": "89125834779",
+      "responsible": "Александр",
+      "paymentMethod": "sbp",
+      "account": "",
+      "city": "Екатеринбург",
+      "category": "Мебель и столы"
+    },
+    {
+      "id": "c7yo8wojo",
+      "name": "Банкет Сервис Екатеринбург",
+      "phone": "89824001028",
+      "responsible": "Дмитрий",
+      "paymentMethod": "transfer",
+      "account": "40702810701533102786",
+      "city": "Екатеринбург",
+      "category": "Мебель и столы"
+    },
+    {
+      "id": "coomatcku",
+      "name": "Кейтеринг Екатеринбург",
+      "phone": "89825792777",
+      "responsible": "Анна",
+      "paymentMethod": "sbp",
+      "account": "",
+      "city": "Екатеринбург",
+      "category": "Кейтеринг"
+    },
+    {
+      "id": "ckr9t8jvq",
+      "name": "Принт Сервис Екатеринбург",
+      "phone": "89124558390",
+      "responsible": "Алексей",
+      "paymentMethod": "invoice",
+      "account": "40702810116463907798",
+      "city": "Екатеринбург",
+      "category": "Полиграфия"
+    },
+    {
+      "id": "cserg2bop",
+      "name": "Генератор Про Екатеринбург",
+      "phone": "89674233620",
+      "responsible": "Дарья",
+      "paymentMethod": "sbp",
+      "account": "",
+      "city": "Екатеринбург",
+      "category": "Генераторы и питание"
+    },
+    {
+      "id": "c4x1i30dt",
+      "name": "СпецЭффект Екатеринбург",
+      "phone": "89505109042",
+      "responsible": "Денис",
+      "paymentMethod": "sbp",
+      "account": "",
+      "city": "Екатеринбург",
+      "category": "Пиротехника и спецэффекты"
+    },
+    {
+      "id": "conklw2vd",
+      "name": "Текстиль Сервис Екатеринбург",
+      "phone": "89506702195",
+      "responsible": "Павел",
+      "paymentMethod": "transfer",
+      "account": "40702810222509774214",
+      "city": "Екатеринбург",
+      "category": "Текстиль и посуда"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "schemaVersion": "1.2",
+  "exportedAt": "2026-05-10T10:00:00Z",
+  "label": "Промо-акция бренда N — май 2026",
+  "report": {
+    "date": "2026-05-08",
+    "title": "Промо-акция бренда N",
+    "eventType": "Промо-акция",
+    "status": "in_progress",
+    "budgetSource": "smeta_promo.xlsx",
+    "presentation": { "kind": "link", "url": "https://disk.yandex.ru/.../promo_pres.pdf" },
+    "photosUrl": "",
+    "expenses": [
+      { "id": "e1", "title": "Аренда площадки", "amount": 120000, "currency": "руб" },
+      { "id": "e2", "title": "Оборудование и свет", "amount": 80000, "currency": "руб" },
+      { "id": "e3", "title": "Декор и полиграфия", "amount": 110000, "currency": "руб" },
+      { "id": "e4", "title": "Промоутеры", "amount": 60000, "currency": "руб", "isCustom": true }
+    ],
+    "income": { "prepaid": 200000, "postpaid": 300000, "total": 500000 },
+    "checklist": [
+      { "id": "c1", "text": "Согласовать брендбук", "done": true },
+      { "id": "c2", "text": "Униформа промоутеров", "done": false },
+      { "id": "c3", "text": "Отчётные фото", "done": false }
+    ],
+    "notes": "ТЦ, 2 дня, дегустация + розыгрыш.",
+    "results": [
+      { "id": "r1", "type": "positive", "category": "Логистика", "text": "Быстрый монтаж за 2 часа" },
+      { "id": "r2", "type": "negative", "category": "Клиент", "text": "Маркетолог заказчика внёс правки в последний момент" }
+    ]
+  }
+}

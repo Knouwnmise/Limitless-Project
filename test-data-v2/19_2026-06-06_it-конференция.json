@@ -1,0 +1,208 @@
+{
+  "schemaVersion": "1.3",
+  "exportedAt": "2026-06-05T21:00:00.000Z",
+  "label": "Конференция — IT-конференция (2026-06-06)",
+  "report": {
+    "date": "2026-06-06",
+    "title": "IT-конференция",
+    "eventType": "Конференция",
+    "status": "done",
+    "venue": "Загородный клуб «Волга»",
+    "durationHours": "6",
+    "budgetSource": "",
+    "presentation": {
+      "url": ""
+    },
+    "photosUrl": "",
+    "expenses": [
+      {
+        "id": "r2q1odt29",
+        "title": "Ведущий",
+        "description": "Программа мероприятия",
+        "qty": 1,
+        "price": 41667,
+        "amount": 41667,
+        "currency": "руб",
+        "isCustom": false,
+        "zone": "Сцена",
+        "contractorId": "cwsddibgp"
+      },
+      {
+        "id": "r3rlb161g",
+        "title": "Артисты",
+        "description": "Шоу-программа",
+        "qty": 1,
+        "price": 51614,
+        "amount": 51614,
+        "currency": "руб",
+        "isCustom": false,
+        "zone": "Сцена",
+        "contractorId": "cq0v8j2f6"
+      },
+      {
+        "id": "rqbi9avkb",
+        "title": "Трансфер гостей",
+        "description": "Автобус/легковые",
+        "qty": 1,
+        "price": 25406,
+        "amount": 25406,
+        "currency": "руб",
+        "isCustom": false,
+        "zone": "Улица/патио",
+        "contractorId": "cvsxj7zwz"
+      },
+      {
+        "id": "r1g453846",
+        "title": "Шатёр",
+        "description": "Аренда + монтаж",
+        "qty": 1,
+        "price": 47579,
+        "amount": 47579,
+        "currency": "руб",
+        "isCustom": false,
+        "zone": "Улица/патио",
+        "contractorId": "c2usaqrrf"
+      },
+      {
+        "id": "r8qcy7m5u",
+        "title": "Кейтеринг",
+        "description": "Фуршет/банкетное меню",
+        "qty": 30,
+        "price": 2394,
+        "amount": 71820,
+        "currency": "руб",
+        "isCustom": false,
+        "zone": "Банкетная зона",
+        "contractorId": "cazprqk0r"
+      },
+      {
+        "id": "rtfv5r0bn",
+        "title": "Мебель и текстиль",
+        "description": "Столы, стулья, скатерти",
+        "qty": 2,
+        "price": 1686,
+        "amount": 3372,
+        "currency": "руб",
+        "isCustom": false,
+        "zone": "Банкетная зона",
+        "contractorId": "cm7x7p03l"
+      }
+    ],
+    "income": {
+      "prepaid": 129639,
+      "postpaid": 90088,
+      "total": 219727
+    },
+    "paymentMethod": "cash",
+    "cashlessMarkupPercent": 10,
+    "checklist": [
+      {
+        "id": "r8innxb7f",
+        "text": "Прогон сценария",
+        "done": true
+      },
+      {
+        "id": "r56rnxee3",
+        "text": "Утвердить план рассадки",
+        "done": false
+      },
+      {
+        "id": "rbisbepsr",
+        "text": "Согласовать меню",
+        "done": true
+      },
+      {
+        "id": "rjsnu2frq",
+        "text": "Проверить доступ на площадку",
+        "done": true
+      },
+      {
+        "id": "rxnicywv0",
+        "text": "Согласовать смету с клиентом",
+        "done": true
+      },
+      {
+        "id": "rpy8lae8g",
+        "text": "Финальный созвон с подрядчиками",
+        "done": true
+      }
+    ],
+    "notes": "Площадка: Чебоксары. Клиент доволен результатом.",
+    "results": [
+      {
+        "id": "rpw5pkpse",
+        "type": "positive",
+        "category": "Кейтеринг",
+        "text": "Меню отработало хорошо, жалоб не было"
+      },
+      {
+        "id": "rjp5ni9aj",
+        "type": "negative",
+        "category": "Подрядчики",
+        "text": "Один из подрядчиков привёз материалы позже срока"
+      }
+    ]
+  },
+  "contractors": [
+    {
+      "id": "cm7x7p03l",
+      "name": "Банкет Сервис Чебоксары",
+      "phone": "89676705574",
+      "responsible": "Алина",
+      "paymentMethod": "sbp",
+      "account": "",
+      "city": "Чебоксары",
+      "category": "Мебель и столы"
+    },
+    {
+      "id": "c2usaqrrf",
+      "name": "Tent Rent Чебоксары",
+      "phone": "89670961454",
+      "responsible": "Наталья",
+      "paymentMethod": "invoice",
+      "account": "40702810887131211554",
+      "city": "Чебоксары",
+      "category": "Шатры и палатки"
+    },
+    {
+      "id": "cazprqk0r",
+      "name": "Банкет Холл Чебоксары",
+      "phone": "89055557742",
+      "responsible": "Руслан",
+      "paymentMethod": "cash",
+      "account": "",
+      "city": "Чебоксары",
+      "category": "Кейтеринг"
+    },
+    {
+      "id": "cvsxj7zwz",
+      "name": "Авто Аренда Чебоксары",
+      "phone": "89052830089",
+      "responsible": "Анна",
+      "paymentMethod": "cash",
+      "account": "",
+      "city": "Чебоксары",
+      "category": "Транспорт"
+    },
+    {
+      "id": "cwsddibgp",
+      "name": "Ивент Шоу Чебоксары",
+      "phone": "89672633266",
+      "responsible": "Артём",
+      "paymentMethod": "sbp",
+      "account": "",
+      "city": "Чебоксары",
+      "category": "Артисты и ведущие"
+    },
+    {
+      "id": "cq0v8j2f6",
+      "name": "Арт Группа Чебоксары",
+      "phone": "88351129331",
+      "responsible": "Регина",
+      "paymentMethod": "sbp",
+      "account": "",
+      "city": "Чебоксары",
+      "category": "Артисты и ведущие"
+    }
+  ]
+}

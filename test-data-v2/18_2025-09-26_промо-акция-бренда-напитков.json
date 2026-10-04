@@ -1,0 +1,309 @@
+{
+  "schemaVersion": "1.3",
+  "exportedAt": "2025-09-25T21:00:00.000Z",
+  "label": "Промо-акция — Промо-акция бренда напитков (2025-09-26)",
+  "report": {
+    "date": "2025-09-26",
+    "title": "Промо-акция бренда напитков",
+    "eventType": "Промо-акция",
+    "status": "planned",
+    "venue": "Event-холл «Высоцкий»",
+    "durationHours": "10",
+    "budgetSource": "",
+    "presentation": {
+      "url": ""
+    },
+    "photosUrl": "",
+    "expenses": [
+      {
+        "id": "rod475lwi",
+        "title": "Шатёр",
+        "description": "Аренда + монтаж",
+        "qty": 1,
+        "price": 78682,
+        "amount": 78682,
+        "currency": "руб",
+        "isCustom": false,
+        "zone": "Улица/патио",
+        "contractorId": "cz7cnv6d4"
+      },
+      {
+        "id": "rc9q5tqtn",
+        "title": "Трансфер гостей",
+        "description": "Автобус/легковые",
+        "qty": 1,
+        "price": 17493,
+        "amount": 17493,
+        "currency": "руб",
+        "isCustom": true,
+        "zone": "Улица/патио",
+        "contractorId": "c7jxyupct"
+      },
+      {
+        "id": "rg22u8gg3",
+        "title": "Посуда",
+        "description": "Аренда посуды на гостя",
+        "qty": 30,
+        "price": 378,
+        "amount": 11340,
+        "currency": "руб",
+        "isCustom": true,
+        "zone": "Банкетная зона",
+        "contractorId": "ckd5vp0wm"
+      },
+      {
+        "id": "rur162xt1",
+        "title": "Мебель и текстиль",
+        "description": "Столы, стулья, скатерти",
+        "qty": 10,
+        "price": 721,
+        "amount": 7210,
+        "currency": "руб",
+        "isCustom": false,
+        "zone": "Банкетная зона",
+        "contractorId": "cjx7zg230"
+      },
+      {
+        "id": "rk1s94obp",
+        "title": "Генератор",
+        "description": "Резервное питание",
+        "qty": 2,
+        "price": 12438,
+        "amount": 24876,
+        "currency": "руб",
+        "isCustom": true,
+        "zone": "Техническая зона",
+        "contractorId": "cserg2bop"
+      },
+      {
+        "id": "rt8pskq28",
+        "title": "Проектор/экран",
+        "description": "Аренда на мероприятие",
+        "qty": 2,
+        "price": 23464,
+        "amount": 46928,
+        "currency": "руб",
+        "isCustom": false,
+        "zone": "Техническая зона",
+        "contractorId": "c1ruq8bd2"
+      },
+      {
+        "id": "rm6c17gnf",
+        "title": "Свет зала",
+        "description": "Заливка, пятна, гирлянды",
+        "qty": 1,
+        "price": 18030,
+        "amount": 18030,
+        "currency": "руб",
+        "isCustom": false,
+        "zone": "Основной зал",
+        "contractorId": "cz82r6sui"
+      },
+      {
+        "id": "rjqlr82gs",
+        "title": "Флористика",
+        "description": "Композиции на стол/сцену",
+        "qty": 2,
+        "price": 6200,
+        "amount": 12400,
+        "currency": "руб",
+        "isCustom": false,
+        "zone": "Основной зал",
+        "contractorId": "cg8ugin94"
+      },
+      {
+        "id": "rrhhb3m4c",
+        "title": "Навигация",
+        "description": "Указатели А3/А4",
+        "qty": 1,
+        "price": 3371,
+        "amount": 3371,
+        "currency": "руб",
+        "isCustom": true,
+        "zone": "Входная группа",
+        "contractorId": "ckr9t8jvq"
+      },
+      {
+        "id": "rwfbnhxuy",
+        "title": "Стойка регистрации",
+        "description": "Аренда + оформление",
+        "qty": 2,
+        "price": 13721,
+        "amount": 27442,
+        "currency": "руб",
+        "isCustom": true,
+        "zone": "Входная группа",
+        "contractorId": "c7yo8wojo"
+      },
+      {
+        "id": "rryh2ty8f",
+        "title": "Флаги/баннеры",
+        "description": "Печать + монтаж",
+        "qty": 1,
+        "price": 12271,
+        "amount": 12271,
+        "currency": "руб",
+        "isCustom": false,
+        "zone": "Входная группа",
+        "contractorId": "cg3v7ss6x"
+      }
+    ],
+    "income": {
+      "prepaid": 136913,
+      "postpaid": 167337,
+      "total": 304250
+    },
+    "paymentMethod": "cashless",
+    "cashlessMarkupPercent": 12,
+    "checklist": [
+      {
+        "id": "rpw7tbp1g",
+        "text": "Прогон сценария",
+        "done": true
+      },
+      {
+        "id": "rf4kjrsny",
+        "text": "Согласовать меню",
+        "done": true
+      },
+      {
+        "id": "rm8m16oe4",
+        "text": "Отправить тайминг монтажа",
+        "done": false
+      }
+    ],
+    "notes": "Площадка: Екатеринбург. Клиент доволен результатом.",
+    "results": [
+      {
+        "id": "r60z2ud8b",
+        "type": "positive",
+        "category": "Организация",
+        "text": "Мероприятие прошло по таймингу без накладок"
+      },
+      {
+        "id": "ra9392jj5",
+        "type": "positive",
+        "category": "Декор",
+        "text": "Гостям и клиенту понравилось оформление"
+      },
+      {
+        "id": "ri2epwbon",
+        "type": "negative",
+        "category": "Техника",
+        "text": "Проблема со звуком в начале программы"
+      }
+    ]
+  },
+  "contractors": [
+    {
+      "id": "cz82r6sui",
+      "name": "Light Pro Екатеринбург",
+      "phone": "89124479709",
+      "responsible": "Алина",
+      "paymentMethod": "transfer",
+      "account": "40702810425209101101",
+      "city": "Екатеринбург",
+      "category": "Световое оборудование"
+    },
+    {
+      "id": "cjx7zg230",
+      "name": "Аренда Мебели Екатеринбург",
+      "phone": "89125834779",
+      "responsible": "Александр",
+      "paymentMethod": "sbp",
+      "account": "",
+      "city": "Екатеринбург",
+      "category": "Мебель и столы"
+    },
+    {
+      "id": "c7yo8wojo",
+      "name": "Банкет Сервис Екатеринбург",
+      "phone": "89824001028",
+      "responsible": "Дмитрий",
+      "paymentMethod": "transfer",
+      "account": "40702810701533102786",
+      "city": "Екатеринбург",
+      "category": "Мебель и столы"
+    },
+    {
+      "id": "cz7cnv6d4",
+      "name": "Шатёр Сервис Екатеринбург",
+      "phone": "89227006588",
+      "responsible": "Евгений",
+      "paymentMethod": "invoice",
+      "account": "40702810717048430297",
+      "city": "Екатеринбург",
+      "category": "Шатры и палатки"
+    },
+    {
+      "id": "cg8ugin94",
+      "name": "Декор Студия Екатеринбург",
+      "phone": "89126911545",
+      "responsible": "Алина",
+      "paymentMethod": "invoice",
+      "account": "40702810485744210226",
+      "city": "Екатеринбург",
+      "category": "Декор и флористика"
+    },
+    {
+      "id": "ckr9t8jvq",
+      "name": "Принт Сервис Екатеринбург",
+      "phone": "89124558390",
+      "responsible": "Алексей",
+      "paymentMethod": "invoice",
+      "account": "40702810116463907798",
+      "city": "Екатеринбург",
+      "category": "Полиграфия"
+    },
+    {
+      "id": "cg3v7ss6x",
+      "name": "Полиграфия Екатеринбург",
+      "phone": "89675558978",
+      "responsible": "Андрей",
+      "paymentMethod": "transfer",
+      "account": "40702810525264773064",
+      "city": "Екатеринбург",
+      "category": "Полиграфия"
+    },
+    {
+      "id": "c1ruq8bd2",
+      "name": "AV Сервис Екатеринбург",
+      "phone": "89823614069",
+      "responsible": "Андрей",
+      "paymentMethod": "sbp",
+      "account": "",
+      "city": "Екатеринбург",
+      "category": "Проекторы и экраны"
+    },
+    {
+      "id": "cserg2bop",
+      "name": "Генератор Про Екатеринбург",
+      "phone": "89674233620",
+      "responsible": "Дарья",
+      "paymentMethod": "sbp",
+      "account": "",
+      "city": "Екатеринбург",
+      "category": "Генераторы и питание"
+    },
+    {
+      "id": "c7jxyupct",
+      "name": "Авто Аренда Екатеринбург",
+      "phone": "89673897341",
+      "responsible": "Александр",
+      "paymentMethod": "transfer",
+      "account": "40702810183319482698",
+      "city": "Екатеринбург",
+      "category": "Транспорт"
+    },
+    {
+      "id": "ckd5vp0wm",
+      "name": "Посуда Про Екатеринбург",
+      "phone": "89124958624",
+      "responsible": "Дарья",
+      "paymentMethod": "invoice",
+      "account": "40702810467145421880",
+      "city": "Екатеринбург",
+      "category": "Текстиль и посуда"
+    }
+  ]
+}

@@ -1,0 +1,225 @@
+{
+  "schemaVersion": "1.3",
+  "exportedAt": "2025-08-17T21:00:00.000Z",
+  "label": "Юбилей — Юбилей компании 10 лет (2025-08-18)",
+  "report": {
+    "date": "2025-08-18",
+    "title": "Юбилей компании 10 лет",
+    "eventType": "Юбилей",
+    "status": "cancelled",
+    "venue": "Банкетный зал «Империал»",
+    "durationHours": "6",
+    "budgetSource": "smeta.xlsx",
+    "presentation": {
+      "url": ""
+    },
+    "photosUrl": "https://disk.example.com/photos-13",
+    "expenses": [
+      {
+        "id": "r7vrx9tlm",
+        "title": "Флаги/баннеры",
+        "description": "Печать + монтаж",
+        "qty": 2,
+        "price": 11903,
+        "amount": 23806,
+        "currency": "руб",
+        "isCustom": false,
+        "zone": "Входная группа",
+        "contractorId": "crol7dchu"
+      },
+      {
+        "id": "rrjcma5bt",
+        "title": "Стойка регистрации",
+        "description": "Аренда + оформление",
+        "qty": 1,
+        "price": 12731,
+        "amount": 12731,
+        "currency": "руб",
+        "isCustom": false,
+        "zone": "Входная группа",
+        "contractorId": "cqu6agi4d"
+      },
+      {
+        "id": "rainncodk",
+        "title": "Свет зала",
+        "description": "Заливка, пятна, гирлянды",
+        "qty": 1,
+        "price": 41021,
+        "amount": 41021,
+        "currency": "руб",
+        "isCustom": false,
+        "zone": "Основной зал",
+        "contractorId": "c4blxdd8i"
+      },
+      {
+        "id": "ri39zqq77",
+        "title": "Звук зала",
+        "description": "Радиомикрофоны, колонки",
+        "qty": 2,
+        "price": 14315,
+        "amount": 28630,
+        "currency": "руб",
+        "isCustom": false,
+        "zone": "Основной зал",
+        "contractorId": "cm9pf04uo"
+      },
+      {
+        "id": "rnpo4y1ya",
+        "title": "Каркас фотозоны",
+        "description": "Деревянный каркас, баннер",
+        "qty": 1,
+        "price": 37072,
+        "amount": 37072,
+        "currency": "руб",
+        "isCustom": false,
+        "zone": "Фотозона",
+        "contractorId": "cwkswuj1l"
+      },
+      {
+        "id": "r54w88dgc",
+        "title": "Фотограф",
+        "description": "Съёмка мероприятия",
+        "qty": 1,
+        "price": 19729,
+        "amount": 19729,
+        "currency": "руб",
+        "isCustom": false,
+        "zone": "Фотозона",
+        "contractorId": "cjopdk36p"
+      },
+      {
+        "id": "ret82mdvb",
+        "title": "Видеограф",
+        "description": "Съёмка + монтаж",
+        "qty": 1,
+        "price": 39028,
+        "amount": 39028,
+        "currency": "руб",
+        "isCustom": true,
+        "zone": "Фотозона",
+        "contractorId": "c18pcsxma"
+      }
+    ],
+    "income": {
+      "prepaid": 112483,
+      "postpaid": 121857,
+      "total": 234340
+    },
+    "paymentMethod": "cash",
+    "cashlessMarkupPercent": 10,
+    "checklist": [
+      {
+        "id": "rlqo0lmlv",
+        "text": "Финальный созвон с подрядчиками",
+        "done": true
+      },
+      {
+        "id": "r37qd7ck0",
+        "text": "Прогон сценария",
+        "done": false
+      },
+      {
+        "id": "r478e0nb6",
+        "text": "Отправить тайминг монтажа",
+        "done": true
+      },
+      {
+        "id": "rmtdggoty",
+        "text": "Согласовать смету с клиентом",
+        "done": true
+      },
+      {
+        "id": "rmxvgvib5",
+        "text": "Проверить оплату предоплаты",
+        "done": true
+      }
+    ],
+    "notes": "Площадка: Йошкар-Ола. Клиент доволен результатом.",
+    "results": [
+      {
+        "id": "r719tnple",
+        "type": "positive",
+        "category": "Кейтеринг",
+        "text": "Меню отработало хорошо, жалоб не было"
+      },
+      {
+        "id": "rcd8s8rhv",
+        "type": "negative",
+        "category": "Логистика",
+        "text": "Задержка монтажа на 30-40 минут"
+      }
+    ]
+  },
+  "contractors": [
+    {
+      "id": "cm9pf04uo",
+      "name": "Аренда Звук Йошкар-Ола",
+      "phone": "89200293993",
+      "responsible": "Иван",
+      "paymentMethod": "invoice",
+      "account": "40702810071211762044",
+      "city": "Йошкар-Ола",
+      "category": "Звуковое оборудование"
+    },
+    {
+      "id": "c4blxdd8i",
+      "name": "Light Pro Йошкар-Ола",
+      "phone": "89501338232",
+      "responsible": "Руслан",
+      "paymentMethod": "cash",
+      "account": "",
+      "city": "Йошкар-Ола",
+      "category": "Световое оборудование"
+    },
+    {
+      "id": "cqu6agi4d",
+      "name": "Банкет Сервис Йошкар-Ола",
+      "phone": "89507980595",
+      "responsible": "Тимур",
+      "paymentMethod": "sbp",
+      "account": "",
+      "city": "Йошкар-Ола",
+      "category": "Мебель и столы"
+    },
+    {
+      "id": "cwkswuj1l",
+      "name": "Флора Декор Йошкар-Ола",
+      "phone": "89879446842",
+      "responsible": "Наталья",
+      "paymentMethod": "cash",
+      "account": "",
+      "city": "Йошкар-Ола",
+      "category": "Декор и флористика"
+    },
+    {
+      "id": "crol7dchu",
+      "name": "Принт Сервис Йошкар-Ола",
+      "phone": "89879892643",
+      "responsible": "Тимур",
+      "paymentMethod": "invoice",
+      "account": "40702810460955584687",
+      "city": "Йошкар-Ола",
+      "category": "Полиграфия"
+    },
+    {
+      "id": "cjopdk36p",
+      "name": "Light Photo Йошкар-Ола",
+      "phone": "89502623590",
+      "responsible": "Денис",
+      "paymentMethod": "sbp",
+      "account": "",
+      "city": "Йошкар-Ола",
+      "category": "Фотосъёмка"
+    },
+    {
+      "id": "c18pcsxma",
+      "name": "Видео Продакшн Йошкар-Ола",
+      "phone": "89500386710",
+      "responsible": "Михаил",
+      "paymentMethod": "cash",
+      "account": "",
+      "city": "Йошкар-Ола",
+      "category": "Видеосъёмка"
+    }
+  ]
+}

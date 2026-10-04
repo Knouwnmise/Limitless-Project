@@ -1,0 +1,294 @@
+{
+  "schemaVersion": "1.3",
+  "exportedAt": "2025-02-23T21:00:00.000Z",
+  "label": "Корпоратив — Новогодний корпоратив банка (2025-02-24)",
+  "report": {
+    "date": "2025-02-24",
+    "title": "Новогодний корпоратив банка",
+    "eventType": "Корпоратив",
+    "status": "planned",
+    "venue": "Загородный клуб «Onego»",
+    "durationHours": "7",
+    "budgetSource": "smeta.xlsx",
+    "presentation": {
+      "url": ""
+    },
+    "photosUrl": "https://disk.example.com/photos-5",
+    "expenses": [
+      {
+        "id": "r8patyybe",
+        "title": "Мебель и текстиль",
+        "description": "Столы, стулья, скатерти",
+        "qty": 7,
+        "price": 2117,
+        "amount": 14819,
+        "currency": "руб",
+        "isCustom": false,
+        "zone": "Банкетная зона",
+        "contractorId": "cqu6agi4d"
+      },
+      {
+        "id": "rh2bdlmm6",
+        "title": "Кейтеринг",
+        "description": "Фуршет/банкетное меню",
+        "qty": 30,
+        "price": 2201,
+        "amount": 66030,
+        "currency": "руб",
+        "isCustom": false,
+        "zone": "Банкетная зона",
+        "contractorId": "c6xo6sjgm"
+      },
+      {
+        "id": "rif8m6c1j",
+        "title": "Посуда",
+        "description": "Аренда посуды на гостя",
+        "qty": 26,
+        "price": 274,
+        "amount": 7124,
+        "currency": "руб",
+        "isCustom": false,
+        "zone": "Банкетная зона",
+        "contractorId": "cb5fkl3ch"
+      },
+      {
+        "id": "rqb26pr7r",
+        "title": "Артисты",
+        "description": "Шоу-программа",
+        "qty": 1,
+        "price": 27445,
+        "amount": 27445,
+        "currency": "руб",
+        "isCustom": false,
+        "zone": "Сцена",
+        "contractorId": "cdasfzyw2"
+      },
+      {
+        "id": "r3es9b8e2",
+        "title": "Ведущий",
+        "description": "Программа мероприятия",
+        "qty": 1,
+        "price": 34363,
+        "amount": 34363,
+        "currency": "руб",
+        "isCustom": false,
+        "zone": "Сцена",
+        "contractorId": "cdasfzyw2"
+      },
+      {
+        "id": "rhihcd634",
+        "title": "Каркас фотозоны",
+        "description": "Деревянный каркас, баннер",
+        "qty": 1,
+        "price": 53816,
+        "amount": 53816,
+        "currency": "руб",
+        "isCustom": false,
+        "zone": "Фотозона",
+        "contractorId": "cwkswuj1l"
+      },
+      {
+        "id": "rf0z6hc4r",
+        "title": "Видеограф",
+        "description": "Съёмка + монтаж",
+        "qty": 1,
+        "price": 35850,
+        "amount": 35850,
+        "currency": "руб",
+        "isCustom": false,
+        "zone": "Фотозона",
+        "contractorId": "cpw73c8tn"
+      },
+      {
+        "id": "rk4r2h79x",
+        "title": "Пиротехника",
+        "description": "Холодный фейерверк",
+        "qty": 1,
+        "price": 27285,
+        "amount": 27285,
+        "currency": "руб",
+        "isCustom": false,
+        "zone": "Техническая зона",
+        "contractorId": "cbov0wtee"
+      },
+      {
+        "id": "rns67wurl",
+        "title": "Проектор/экран",
+        "description": "Аренда на мероприятие",
+        "qty": 2,
+        "price": 10132,
+        "amount": 20264,
+        "currency": "руб",
+        "isCustom": true,
+        "zone": "Техническая зона",
+        "contractorId": "ciggarglh"
+      },
+      {
+        "id": "rqhaln839",
+        "title": "Свет зала",
+        "description": "Заливка, пятна, гирлянды",
+        "qty": 1,
+        "price": 30851,
+        "amount": 30851,
+        "currency": "руб",
+        "isCustom": false,
+        "zone": "Основной зал",
+        "contractorId": "c4blxdd8i"
+      },
+      {
+        "id": "rjdomhwd8",
+        "title": "Флористика",
+        "description": "Композиции на стол/сцену",
+        "qty": 2,
+        "price": 15742,
+        "amount": 31484,
+        "currency": "руб",
+        "isCustom": false,
+        "zone": "Основной зал",
+        "contractorId": "cwkswuj1l"
+      }
+    ],
+    "income": {
+      "prepaid": 188010,
+      "postpaid": 220707,
+      "total": 408717
+    },
+    "paymentMethod": "cashless",
+    "cashlessMarkupPercent": 8,
+    "checklist": [
+      {
+        "id": "r8fi1wrks",
+        "text": "Согласовать смету с клиентом",
+        "done": true
+      },
+      {
+        "id": "rrtacraa0",
+        "text": "Подписать договор",
+        "done": true
+      },
+      {
+        "id": "rvpcd5x61",
+        "text": "Согласовать меню",
+        "done": false
+      },
+      {
+        "id": "rmjr0oug4",
+        "text": "Проверить доступ на площадку",
+        "done": true
+      }
+    ],
+    "notes": "",
+    "results": [
+      {
+        "id": "r7h6rdk9n",
+        "type": "negative",
+        "category": "Подрядчики",
+        "text": "Один из подрядчиков привёз материалы позже срока"
+      },
+      {
+        "id": "rkei8jvgx",
+        "type": "positive",
+        "category": "Организация",
+        "text": "Мероприятие прошло по таймингу без накладок"
+      },
+      {
+        "id": "rtxecjvsh",
+        "type": "positive",
+        "category": "Декор",
+        "text": "Гостям и клиенту понравилось оформление"
+      }
+    ]
+  },
+  "contractors": [
+    {
+      "id": "c4blxdd8i",
+      "name": "Light Pro Йошкар-Ола",
+      "phone": "89501338232",
+      "responsible": "Руслан",
+      "paymentMethod": "cash",
+      "account": "",
+      "city": "Йошкар-Ола",
+      "category": "Световое оборудование"
+    },
+    {
+      "id": "cqu6agi4d",
+      "name": "Банкет Сервис Йошкар-Ола",
+      "phone": "89507980595",
+      "responsible": "Тимур",
+      "paymentMethod": "sbp",
+      "account": "",
+      "city": "Йошкар-Ола",
+      "category": "Мебель и столы"
+    },
+    {
+      "id": "c6xo6sjgm",
+      "name": "Кейтеринг Йошкар-Ола",
+      "phone": "89202105072",
+      "responsible": "Татьяна",
+      "paymentMethod": "invoice",
+      "account": "40702810618755590820",
+      "city": "Йошкар-Ола",
+      "category": "Кейтеринг"
+    },
+    {
+      "id": "cwkswuj1l",
+      "name": "Флора Декор Йошкар-Ола",
+      "phone": "89879446842",
+      "responsible": "Наталья",
+      "paymentMethod": "cash",
+      "account": "",
+      "city": "Йошкар-Ола",
+      "category": "Декор и флористика"
+    },
+    {
+      "id": "ciggarglh",
+      "name": "AV Сервис Йошкар-Ола",
+      "phone": "89502947337",
+      "responsible": "Ксения",
+      "paymentMethod": "transfer",
+      "account": "40702810087500262221",
+      "city": "Йошкар-Ола",
+      "category": "Проекторы и экраны"
+    },
+    {
+      "id": "cpw73c8tn",
+      "name": "Film Crew Йошкар-Ола",
+      "phone": "89207458945",
+      "responsible": "Евгений",
+      "paymentMethod": "cash",
+      "account": "",
+      "city": "Йошкар-Ола",
+      "category": "Видеосъёмка"
+    },
+    {
+      "id": "cdasfzyw2",
+      "name": "Ивент Шоу Йошкар-Ола",
+      "phone": "89632470628",
+      "responsible": "Сергей",
+      "paymentMethod": "invoice",
+      "account": "40702810160526188444",
+      "city": "Йошкар-Ола",
+      "category": "Артисты и ведущие"
+    },
+    {
+      "id": "cbov0wtee",
+      "name": "СпецЭффект Йошкар-Ола",
+      "phone": "89635517000",
+      "responsible": "Эльвира",
+      "paymentMethod": "invoice",
+      "account": "40702810443667294160",
+      "city": "Йошкар-Ола",
+      "category": "Пиротехника и спецэффекты"
+    },
+    {
+      "id": "cb5fkl3ch",
+      "name": "Текстиль Сервис Йошкар-Ола",
+      "phone": "89635417304",
+      "responsible": "Регина",
+      "paymentMethod": "invoice",
+      "account": "40702810286068579043",
+      "city": "Йошкар-Ола",
+      "category": "Текстиль и посуда"
+    }
+  ]
+}

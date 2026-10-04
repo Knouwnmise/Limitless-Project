@@ -1,0 +1,325 @@
+{
+  "schemaVersion": "1.3",
+  "exportedAt": "2025-11-27T21:00:00.000Z",
+  "label": "День рождения — День рождения 40 лет (2025-11-28)",
+  "report": {
+    "date": "2025-11-28",
+    "title": "День рождения 40 лет",
+    "eventType": "День рождения",
+    "status": "done",
+    "venue": "Event-холл «Высоцкий»",
+    "durationHours": "10",
+    "budgetSource": "",
+    "presentation": {
+      "url": ""
+    },
+    "photosUrl": "https://disk.example.com/photos-10",
+    "expenses": [
+      {
+        "id": "r2am0n5xq",
+        "title": "Флаги/баннеры",
+        "description": "Печать + монтаж",
+        "qty": 2,
+        "price": 8814,
+        "amount": 17628,
+        "currency": "руб",
+        "isCustom": false,
+        "zone": "Входная группа",
+        "contractorId": "ckr9t8jvq"
+      },
+      {
+        "id": "r91lwcr4l",
+        "title": "Стойка регистрации",
+        "description": "Аренда + оформление",
+        "qty": 1,
+        "price": 13494,
+        "amount": 13494,
+        "currency": "руб",
+        "isCustom": false,
+        "zone": "Входная группа",
+        "contractorId": "c7yo8wojo"
+      },
+      {
+        "id": "rfgocsq6w",
+        "title": "Декор столов",
+        "description": "Скатерти, чехлы, композиции",
+        "qty": 23,
+        "price": 1829,
+        "amount": 42067,
+        "currency": "руб",
+        "isCustom": true,
+        "zone": "Основной зал",
+        "contractorId": "cs1m3mba6"
+      },
+      {
+        "id": "rqtx1uaxq",
+        "title": "Звук зала",
+        "description": "Радиомикрофоны, колонки",
+        "qty": 1,
+        "price": 23815,
+        "amount": 23815,
+        "currency": "руб",
+        "isCustom": false,
+        "zone": "Основной зал",
+        "contractorId": "cczxypsvo"
+      },
+      {
+        "id": "r1mpkryky",
+        "title": "Флористика",
+        "description": "Композиции на стол/сцену",
+        "qty": 1,
+        "price": 10047,
+        "amount": 10047,
+        "currency": "руб",
+        "isCustom": false,
+        "zone": "Основной зал",
+        "contractorId": "cg8ugin94"
+      },
+      {
+        "id": "rmv6glf3t",
+        "title": "Видеограф",
+        "description": "Съёмка + монтаж",
+        "qty": 1,
+        "price": 41343,
+        "amount": 41343,
+        "currency": "руб",
+        "isCustom": false,
+        "zone": "Фотозона",
+        "contractorId": "cn9htkjqs"
+      },
+      {
+        "id": "r6fbj6y4r",
+        "title": "Фотограф",
+        "description": "Съёмка мероприятия",
+        "qty": 1,
+        "price": 28964,
+        "amount": 28964,
+        "currency": "руб",
+        "isCustom": false,
+        "zone": "Фотозона",
+        "contractorId": "c2rk2nj7t"
+      },
+      {
+        "id": "r05xuu44p",
+        "title": "Каркас фотозоны",
+        "description": "Деревянный каркас, баннер",
+        "qty": 1,
+        "price": 58726,
+        "amount": 58726,
+        "currency": "руб",
+        "isCustom": false,
+        "zone": "Фотозона",
+        "contractorId": "cs1m3mba6"
+      },
+      {
+        "id": "rgzdb8wkq",
+        "title": "Трансфер гостей",
+        "description": "Автобус/легковые",
+        "qty": 2,
+        "price": 29846,
+        "amount": 59692,
+        "currency": "руб",
+        "isCustom": false,
+        "zone": "Улица/патио",
+        "contractorId": "c6uq5yb9u"
+      },
+      {
+        "id": "rg4xe9ygb",
+        "title": "Шатёр",
+        "description": "Аренда + монтаж",
+        "qty": 1,
+        "price": 42122,
+        "amount": 42122,
+        "currency": "руб",
+        "isCustom": false,
+        "zone": "Улица/патио",
+        "contractorId": "cnjp2pxbe"
+      },
+      {
+        "id": "rqur1z0px",
+        "title": "Сценический подиум",
+        "description": "Монтаж/демонтаж",
+        "qty": 1,
+        "price": 30300,
+        "amount": 30300,
+        "currency": "руб",
+        "isCustom": false,
+        "zone": "Сцена",
+        "contractorId": "cszes9yg3"
+      },
+      {
+        "id": "rt7110bj1",
+        "title": "Артисты",
+        "description": "Шоу-программа",
+        "qty": 1,
+        "price": 35156,
+        "amount": 35156,
+        "currency": "руб",
+        "isCustom": false,
+        "zone": "Сцена",
+        "contractorId": "c7mhr49s7"
+      }
+    ],
+    "income": {
+      "prepaid": 239350,
+      "postpaid": 280977,
+      "total": 520327
+    },
+    "paymentMethod": "cash",
+    "cashlessMarkupPercent": 12,
+    "checklist": [
+      {
+        "id": "r6i62h1jt",
+        "text": "Отправить тайминг монтажа",
+        "done": true
+      },
+      {
+        "id": "r7opbabhl",
+        "text": "Подписать договор",
+        "done": true
+      },
+      {
+        "id": "r7p7abcjy",
+        "text": "Прогон сценария",
+        "done": true
+      },
+      {
+        "id": "rhx5r9ef6",
+        "text": "Согласовать меню",
+        "done": true
+      },
+      {
+        "id": "r0gy3f1z7",
+        "text": "Согласовать смету с клиентом",
+        "done": true
+      }
+    ],
+    "notes": "",
+    "results": [
+      {
+        "id": "rzu9zjahf",
+        "type": "negative",
+        "category": "Подрядчики",
+        "text": "Один из подрядчиков привёз материалы позже срока"
+      },
+      {
+        "id": "r1sk14ryb",
+        "type": "positive",
+        "category": "Кейтеринг",
+        "text": "Меню отработало хорошо, жалоб не было"
+      }
+    ]
+  },
+  "contractors": [
+    {
+      "id": "cczxypsvo",
+      "name": "АудиоПрокат Екатеринбург",
+      "phone": "89229084367",
+      "responsible": "Анна",
+      "paymentMethod": "invoice",
+      "account": "40702810577449704202",
+      "city": "Екатеринбург",
+      "category": "Звуковое оборудование"
+    },
+    {
+      "id": "cszes9yg3",
+      "name": "Сцена Сервис Екатеринбург",
+      "phone": "89824797653",
+      "responsible": "Алексей",
+      "paymentMethod": "cash",
+      "account": "",
+      "city": "Екатеринбург",
+      "category": "Сцены и подиумы"
+    },
+    {
+      "id": "c7yo8wojo",
+      "name": "Банкет Сервис Екатеринбург",
+      "phone": "89824001028",
+      "responsible": "Дмитрий",
+      "paymentMethod": "transfer",
+      "account": "40702810701533102786",
+      "city": "Екатеринбург",
+      "category": "Мебель и столы"
+    },
+    {
+      "id": "cnjp2pxbe",
+      "name": "Tent Rent Екатеринбург",
+      "phone": "89674637710",
+      "responsible": "Алексей",
+      "paymentMethod": "cash",
+      "account": "",
+      "city": "Екатеринбург",
+      "category": "Шатры и палатки"
+    },
+    {
+      "id": "cs1m3mba6",
+      "name": "Флора Декор Екатеринбург",
+      "phone": "89676743093",
+      "responsible": "Мария",
+      "paymentMethod": "sbp",
+      "account": "",
+      "city": "Екатеринбург",
+      "category": "Декор и флористика"
+    },
+    {
+      "id": "cg8ugin94",
+      "name": "Декор Студия Екатеринбург",
+      "phone": "89126911545",
+      "responsible": "Алина",
+      "paymentMethod": "invoice",
+      "account": "40702810485744210226",
+      "city": "Екатеринбург",
+      "category": "Декор и флористика"
+    },
+    {
+      "id": "ckr9t8jvq",
+      "name": "Принт Сервис Екатеринбург",
+      "phone": "89124558390",
+      "responsible": "Алексей",
+      "paymentMethod": "invoice",
+      "account": "40702810116463907798",
+      "city": "Екатеринбург",
+      "category": "Полиграфия"
+    },
+    {
+      "id": "c6uq5yb9u",
+      "name": "Трансфер Екатеринбург",
+      "phone": "89229866762",
+      "responsible": "Эльвира",
+      "paymentMethod": "cash",
+      "account": "",
+      "city": "Екатеринбург",
+      "category": "Транспорт"
+    },
+    {
+      "id": "c2rk2nj7t",
+      "name": "Light Photo Екатеринбург",
+      "phone": "89125093156",
+      "responsible": "Анна",
+      "paymentMethod": "sbp",
+      "account": "",
+      "city": "Екатеринбург",
+      "category": "Фотосъёмка"
+    },
+    {
+      "id": "cn9htkjqs",
+      "name": "Film Crew Екатеринбург",
+      "phone": "89824884667",
+      "responsible": "Иван",
+      "paymentMethod": "sbp",
+      "account": "",
+      "city": "Екатеринбург",
+      "category": "Видеосъёмка"
+    },
+    {
+      "id": "c7mhr49s7",
+      "name": "Арт Группа Екатеринбург",
+      "phone": "89828932066",
+      "responsible": "Ольга",
+      "paymentMethod": "transfer",
+      "account": "40702810731149538099",
+      "city": "Екатеринбург",
+      "category": "Артисты и ведущие"
+    }
+  ]
+}

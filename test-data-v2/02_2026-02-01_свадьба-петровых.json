@@ -1,0 +1,232 @@
+{
+  "schemaVersion": "1.3",
+  "exportedAt": "2026-01-31T21:00:00.000Z",
+  "label": "Свадьба — Свадьба Петровых (2026-02-01)",
+  "report": {
+    "date": "2026-02-01",
+    "title": "Свадьба Петровых",
+    "eventType": "Свадьба",
+    "status": "done",
+    "venue": "Event-холл «Высоцкий»",
+    "durationHours": "10",
+    "budgetSource": "smeta.xlsx",
+    "presentation": {
+      "url": ""
+    },
+    "photosUrl": "https://disk.example.com/photos-2",
+    "expenses": [
+      {
+        "id": "r1hh1pf2a",
+        "title": "Видеограф",
+        "description": "Съёмка + монтаж",
+        "qty": 1,
+        "price": 44840,
+        "amount": 44840,
+        "currency": "руб",
+        "isCustom": true,
+        "zone": "Фотозона",
+        "contractorId": "cn9htkjqs"
+      },
+      {
+        "id": "rr8inw84v",
+        "title": "Каркас фотозоны",
+        "description": "Деревянный каркас, баннер",
+        "qty": 1,
+        "price": 37809,
+        "amount": 37809,
+        "currency": "руб",
+        "isCustom": false,
+        "zone": "Фотозона",
+        "contractorId": "cg8ugin94"
+      },
+      {
+        "id": "rbuvx2tjl",
+        "title": "Декор столов",
+        "description": "Скатерти, чехлы, композиции",
+        "qty": 12,
+        "price": 1595,
+        "amount": 19140,
+        "currency": "руб",
+        "isCustom": false,
+        "zone": "Основной зал",
+        "contractorId": "cs1m3mba6"
+      },
+      {
+        "id": "rvf3fx98a",
+        "title": "Звук зала",
+        "description": "Радиомикрофоны, колонки",
+        "qty": 1,
+        "price": 23672,
+        "amount": 23672,
+        "currency": "руб",
+        "isCustom": false,
+        "zone": "Основной зал",
+        "contractorId": "cczxypsvo"
+      },
+      {
+        "id": "rw24vawg3",
+        "title": "Флористика",
+        "description": "Композиции на стол/сцену",
+        "qty": 3,
+        "price": 19542,
+        "amount": 58626,
+        "currency": "руб",
+        "isCustom": false,
+        "zone": "Основной зал",
+        "contractorId": "cs1m3mba6"
+      },
+      {
+        "id": "rie64tbkv",
+        "title": "Ведущий",
+        "description": "Программа мероприятия",
+        "qty": 1,
+        "price": 58438,
+        "amount": 58438,
+        "currency": "руб",
+        "isCustom": false,
+        "zone": "Сцена",
+        "contractorId": "c7mhr49s7"
+      },
+      {
+        "id": "ra91wp7he",
+        "title": "Артисты",
+        "description": "Шоу-программа",
+        "qty": 1,
+        "price": 68641,
+        "amount": 68641,
+        "currency": "руб",
+        "isCustom": false,
+        "zone": "Сцена",
+        "contractorId": "c7mhr49s7"
+      },
+      {
+        "id": "r13iqtfzb",
+        "title": "Сценический подиум",
+        "description": "Монтаж/демонтаж",
+        "qty": 1,
+        "price": 39742,
+        "amount": 39742,
+        "currency": "руб",
+        "isCustom": true,
+        "zone": "Сцена",
+        "contractorId": "csiadj274"
+      }
+    ],
+    "income": {
+      "prepaid": 243179,
+      "postpaid": 198965,
+      "total": 442144
+    },
+    "paymentMethod": "cash",
+    "cashlessMarkupPercent": 10,
+    "checklist": [
+      {
+        "id": "ribj7mxw6",
+        "text": "Проверить оплату предоплаты",
+        "done": true
+      },
+      {
+        "id": "rk4dj1pzo",
+        "text": "Согласовать смету с клиентом",
+        "done": false
+      },
+      {
+        "id": "rwrqs0szi",
+        "text": "Подписать договор",
+        "done": true
+      },
+      {
+        "id": "rweee0mhg",
+        "text": "Отправить тайминг монтажа",
+        "done": true
+      },
+      {
+        "id": "r44oo9m84",
+        "text": "Утвердить план рассадки",
+        "done": true
+      },
+      {
+        "id": "rbx3t6uyl",
+        "text": "Финальный созвон с подрядчиками",
+        "done": false
+      }
+    ],
+    "notes": "",
+    "results": [
+      {
+        "id": "r2t65yak4",
+        "type": "negative",
+        "category": "Техника",
+        "text": "Проблема со звуком в начале программы"
+      },
+      {
+        "id": "rqnrj5kgo",
+        "type": "negative",
+        "category": "Логистика",
+        "text": "Задержка монтажа на 30-40 минут"
+      }
+    ]
+  },
+  "contractors": [
+    {
+      "id": "cczxypsvo",
+      "name": "АудиоПрокат Екатеринбург",
+      "phone": "89229084367",
+      "responsible": "Анна",
+      "paymentMethod": "invoice",
+      "account": "40702810577449704202",
+      "city": "Екатеринбург",
+      "category": "Звуковое оборудование"
+    },
+    {
+      "id": "csiadj274",
+      "name": "Stage Rent Екатеринбург",
+      "phone": "89228740187",
+      "responsible": "Евгений",
+      "paymentMethod": "cash",
+      "account": "",
+      "city": "Екатеринбург",
+      "category": "Сцены и подиумы"
+    },
+    {
+      "id": "cs1m3mba6",
+      "name": "Флора Декор Екатеринбург",
+      "phone": "89676743093",
+      "responsible": "Мария",
+      "paymentMethod": "sbp",
+      "account": "",
+      "city": "Екатеринбург",
+      "category": "Декор и флористика"
+    },
+    {
+      "id": "cg8ugin94",
+      "name": "Декор Студия Екатеринбург",
+      "phone": "89126911545",
+      "responsible": "Алина",
+      "paymentMethod": "invoice",
+      "account": "40702810485744210226",
+      "city": "Екатеринбург",
+      "category": "Декор и флористика"
+    },
+    {
+      "id": "cn9htkjqs",
+      "name": "Film Crew Екатеринбург",
+      "phone": "89824884667",
+      "responsible": "Иван",
+      "paymentMethod": "sbp",
+      "account": "",
+      "city": "Екатеринбург",
+      "category": "Видеосъёмка"
+    },
+    {
+      "id": "c7mhr49s7",
+      "name": "Арт Группа Екатеринбург",
+      "phone": "89828932066",
+      "responsible": "Ольга",
+      "paymentMethod": "transfer",
+      "account": "40702810731149538099",
+      "city": "Екатеринбург",
+      "category": "Артисты и ведущие"
+    }
+  ]
+}

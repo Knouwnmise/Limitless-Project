@@ -1,0 +1,283 @@
+{
+  "schemaVersion": "1.3",
+  "exportedAt": "2026-02-17T21:00:00.000Z",
+  "label": "Промо-акция — Промо-акция бренда напитков (2026-02-18)",
+  "report": {
+    "date": "2026-02-18",
+    "title": "Промо-акция бренда напитков",
+    "eventType": "Промо-акция",
+    "status": "cancelled",
+    "venue": "Ресторан «Тредж»",
+    "durationHours": "7",
+    "budgetSource": "",
+    "presentation": {
+      "url": "https://disk.example.com/presentation-17"
+    },
+    "photosUrl": "https://disk.example.com/photos-17",
+    "expenses": [
+      {
+        "id": "rshxdv4ko",
+        "title": "Мебель и текстиль",
+        "description": "Столы, стулья, скатерти",
+        "qty": 16,
+        "price": 971,
+        "amount": 15536,
+        "currency": "руб",
+        "isCustom": false,
+        "zone": "Банкетная зона",
+        "contractorId": "ct8z5113p"
+      },
+      {
+        "id": "rbf7ph4zd",
+        "title": "Кейтеринг",
+        "description": "Фуршет/банкетное меню",
+        "qty": 4,
+        "price": 2255,
+        "amount": 9020,
+        "currency": "руб",
+        "isCustom": false,
+        "zone": "Банкетная зона",
+        "contractorId": "cj71dvd6o"
+      },
+      {
+        "id": "rxa9oqnnx",
+        "title": "Посуда",
+        "description": "Аренда посуды на гостя",
+        "qty": 16,
+        "price": 197,
+        "amount": 3152,
+        "currency": "руб",
+        "isCustom": false,
+        "zone": "Банкетная зона",
+        "contractorId": "cb5fkl3ch"
+      },
+      {
+        "id": "r373jhd62",
+        "title": "Навигация",
+        "description": "Указатели А3/А4",
+        "qty": 1,
+        "price": 6648,
+        "amount": 6648,
+        "currency": "руб",
+        "isCustom": true,
+        "zone": "Входная группа",
+        "contractorId": "ceoky2qpo"
+      },
+      {
+        "id": "rkdg09emc",
+        "title": "Стойка регистрации",
+        "description": "Аренда + оформление",
+        "qty": 1,
+        "price": 9307,
+        "amount": 9307,
+        "currency": "руб",
+        "isCustom": false,
+        "zone": "Входная группа",
+        "contractorId": "ct8z5113p"
+      },
+      {
+        "id": "rhkt0t4z9",
+        "title": "Флаги/баннеры",
+        "description": "Печать + монтаж",
+        "qty": 3,
+        "price": 17695,
+        "amount": 53085,
+        "currency": "руб",
+        "isCustom": false,
+        "zone": "Входная группа",
+        "contractorId": "ceoky2qpo"
+      },
+      {
+        "id": "rdujee0px",
+        "title": "Декор столов",
+        "description": "Скатерти, чехлы, композиции",
+        "qty": 19,
+        "price": 1597,
+        "amount": 30343,
+        "currency": "руб",
+        "isCustom": false,
+        "zone": "Основной зал",
+        "contractorId": "cwkswuj1l"
+      },
+      {
+        "id": "rupa0peor",
+        "title": "Флористика",
+        "description": "Композиции на стол/сцену",
+        "qty": 3,
+        "price": 20664,
+        "amount": 61992,
+        "currency": "руб",
+        "isCustom": false,
+        "zone": "Основной зал",
+        "contractorId": "cwkswuj1l"
+      },
+      {
+        "id": "rtapz8kh5",
+        "title": "Свет зала",
+        "description": "Заливка, пятна, гирлянды",
+        "qty": 1,
+        "price": 28037,
+        "amount": 28037,
+        "currency": "руб",
+        "isCustom": false,
+        "zone": "Основной зал",
+        "contractorId": "coj0q9qur"
+      },
+      {
+        "id": "ratlehruc",
+        "title": "Шатёр",
+        "description": "Аренда + монтаж",
+        "qty": 1,
+        "price": 51928,
+        "amount": 51928,
+        "currency": "руб",
+        "isCustom": true,
+        "zone": "Улица/патио",
+        "contractorId": "cojzqa915"
+      },
+      {
+        "id": "r1gpo3drs",
+        "title": "Трансфер гостей",
+        "description": "Автобус/легковые",
+        "qty": 3,
+        "price": 13562,
+        "amount": 40686,
+        "currency": "руб",
+        "isCustom": false,
+        "zone": "Улица/патио",
+        "contractorId": "cwvqpsn05"
+      }
+    ],
+    "income": {
+      "prepaid": 162177,
+      "postpaid": 206406,
+      "total": 368583
+    },
+    "paymentMethod": "cash",
+    "cashlessMarkupPercent": 8,
+    "checklist": [
+      {
+        "id": "rhae739yr",
+        "text": "Согласовать смету с клиентом",
+        "done": false
+      },
+      {
+        "id": "rjzhfaxlh",
+        "text": "Прогон сценария",
+        "done": false
+      },
+      {
+        "id": "rynzmklgu",
+        "text": "Финальный созвон с подрядчиками",
+        "done": true
+      },
+      {
+        "id": "r9alzqou6",
+        "text": "Согласовать меню",
+        "done": false
+      },
+      {
+        "id": "rdlptleu8",
+        "text": "Подписать договор",
+        "done": true
+      }
+    ],
+    "notes": "",
+    "results": [
+      {
+        "id": "r3ivquozj",
+        "type": "positive",
+        "category": "Организация",
+        "text": "Мероприятие прошло по таймингу без накладок"
+      },
+      {
+        "id": "rciq7sk8g",
+        "type": "negative",
+        "category": "Техника",
+        "text": "Проблема со звуком в начале программы"
+      }
+    ]
+  },
+  "contractors": [
+    {
+      "id": "coj0q9qur",
+      "name": "Свет Плюс Йошкар-Ола",
+      "phone": "89630769526",
+      "responsible": "Эльвира",
+      "paymentMethod": "sbp",
+      "account": "",
+      "city": "Йошкар-Ола",
+      "category": "Световое оборудование"
+    },
+    {
+      "id": "ct8z5113p",
+      "name": "Аренда Мебели Йошкар-Ола",
+      "phone": "89879459156",
+      "responsible": "Александр",
+      "paymentMethod": "cash",
+      "account": "",
+      "city": "Йошкар-Ола",
+      "category": "Мебель и столы"
+    },
+    {
+      "id": "cojzqa915",
+      "name": "Шатёр Сервис Йошкар-Ола",
+      "phone": "89877080932",
+      "responsible": "Сергей",
+      "paymentMethod": "cash",
+      "account": "",
+      "city": "Йошкар-Ола",
+      "category": "Шатры и палатки"
+    },
+    {
+      "id": "cj71dvd6o",
+      "name": "Банкет Холл Йошкар-Ола",
+      "phone": "89637204492",
+      "responsible": "Игорь",
+      "paymentMethod": "transfer",
+      "account": "40702810525074507173",
+      "city": "Йошкар-Ола",
+      "category": "Кейтеринг"
+    },
+    {
+      "id": "cwkswuj1l",
+      "name": "Флора Декор Йошкар-Ола",
+      "phone": "89879446842",
+      "responsible": "Наталья",
+      "paymentMethod": "cash",
+      "account": "",
+      "city": "Йошкар-Ола",
+      "category": "Декор и флористика"
+    },
+    {
+      "id": "ceoky2qpo",
+      "name": "Полиграфия Йошкар-Ола",
+      "phone": "89871460387",
+      "responsible": "Регина",
+      "paymentMethod": "invoice",
+      "account": "40702810863183732998",
+      "city": "Йошкар-Ола",
+      "category": "Полиграфия"
+    },
+    {
+      "id": "cwvqpsn05",
+      "name": "Трансфер Йошкар-Ола",
+      "phone": "89202316690",
+      "responsible": "Михаил",
+      "paymentMethod": "sbp",
+      "account": "",
+      "city": "Йошкар-Ола",
+      "category": "Транспорт"
+    },
+    {
+      "id": "cb5fkl3ch",
+      "name": "Текстиль Сервис Йошкар-Ола",
+      "phone": "89635417304",
+      "responsible": "Регина",
+      "paymentMethod": "invoice",
+      "account": "40702810286068579043",
+      "city": "Йошкар-Ола",
+      "category": "Текстиль и посуда"
+    }
+  ]
+}

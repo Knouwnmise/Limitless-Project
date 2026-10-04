@@ -1,0 +1,193 @@
+{
+  "schemaVersion": "1.3",
+  "exportedAt": "2025-02-18T21:00:00.000Z",
+  "label": "Свадьба — Свадьба Соколовых (2025-02-19)",
+  "report": {
+    "date": "2025-02-19",
+    "title": "Свадьба Соколовых",
+    "eventType": "Свадьба",
+    "status": "cancelled",
+    "venue": "Банкетный зал «Империал»",
+    "durationHours": "9",
+    "budgetSource": "smeta.xlsx",
+    "presentation": {
+      "url": ""
+    },
+    "photosUrl": "https://disk.example.com/photos-1",
+    "expenses": [
+      {
+        "id": "rr2a14ijw",
+        "title": "Артисты",
+        "description": "Шоу-программа",
+        "qty": 1,
+        "price": 63867,
+        "amount": 63867,
+        "currency": "руб",
+        "isCustom": false,
+        "zone": "Сцена",
+        "contractorId": "co8isblsr"
+      },
+      {
+        "id": "rl41fsvo3",
+        "title": "Сценический подиум",
+        "description": "Монтаж/демонтаж",
+        "qty": 1,
+        "price": 20003,
+        "amount": 20003,
+        "currency": "руб",
+        "isCustom": false,
+        "zone": "Сцена",
+        "contractorId": "cvzwl89zf"
+      },
+      {
+        "id": "rk5qsgm9v",
+        "title": "Флаги/баннеры",
+        "description": "Печать + монтаж",
+        "qty": 3,
+        "price": 11102,
+        "amount": 33306,
+        "currency": "руб",
+        "isCustom": false,
+        "zone": "Входная группа",
+        "contractorId": "ceoky2qpo"
+      },
+      {
+        "id": "rtia5r1yh",
+        "title": "Стойка регистрации",
+        "description": "Аренда + оформление",
+        "qty": 1,
+        "price": 7052,
+        "amount": 7052,
+        "currency": "руб",
+        "isCustom": false,
+        "zone": "Входная группа",
+        "contractorId": "ct8z5113p"
+      },
+      {
+        "id": "rv9o7lf6t",
+        "title": "Шатёр",
+        "description": "Аренда + монтаж",
+        "qty": 1,
+        "price": 52304,
+        "amount": 52304,
+        "currency": "руб",
+        "isCustom": false,
+        "zone": "Улица/патио",
+        "contractorId": "cojzqa915"
+      },
+      {
+        "id": "rc1agv889",
+        "title": "Трансфер гостей",
+        "description": "Автобус/легковые",
+        "qty": 1,
+        "price": 14780,
+        "amount": 14780,
+        "currency": "руб",
+        "isCustom": false,
+        "zone": "Улица/патио",
+        "contractorId": "cqs9gtshj"
+      }
+    ],
+    "income": {
+      "prepaid": 104170,
+      "postpaid": 127318,
+      "total": 231488
+    },
+    "paymentMethod": "cashless",
+    "cashlessMarkupPercent": 12,
+    "checklist": [
+      {
+        "id": "rcn5q3qwx",
+        "text": "Согласовать смету с клиентом",
+        "done": false
+      },
+      {
+        "id": "rkwz2uvkc",
+        "text": "Финальный созвон с подрядчиками",
+        "done": true
+      },
+      {
+        "id": "rm5dvdrz6",
+        "text": "Проверить доступ на площадку",
+        "done": true
+      }
+    ],
+    "notes": "",
+    "results": [
+      {
+        "id": "r55ghvfje",
+        "type": "positive",
+        "category": "Организация",
+        "text": "Мероприятие прошло по таймингу без накладок"
+      },
+      {
+        "id": "rkksyqpcj",
+        "type": "negative",
+        "category": "Техника",
+        "text": "Проблема со звуком в начале программы"
+      }
+    ]
+  },
+  "contractors": [
+    {
+      "id": "cvzwl89zf",
+      "name": "Stage Rent Йошкар-Ола",
+      "phone": "89639049470",
+      "responsible": "Анна",
+      "paymentMethod": "cash",
+      "account": "",
+      "city": "Йошкар-Ола",
+      "category": "Сцены и подиумы"
+    },
+    {
+      "id": "ct8z5113p",
+      "name": "Аренда Мебели Йошкар-Ола",
+      "phone": "89879459156",
+      "responsible": "Александр",
+      "paymentMethod": "cash",
+      "account": "",
+      "city": "Йошкар-Ола",
+      "category": "Мебель и столы"
+    },
+    {
+      "id": "cojzqa915",
+      "name": "Шатёр Сервис Йошкар-Ола",
+      "phone": "89877080932",
+      "responsible": "Сергей",
+      "paymentMethod": "cash",
+      "account": "",
+      "city": "Йошкар-Ола",
+      "category": "Шатры и палатки"
+    },
+    {
+      "id": "ceoky2qpo",
+      "name": "Полиграфия Йошкар-Ола",
+      "phone": "89871460387",
+      "responsible": "Регина",
+      "paymentMethod": "invoice",
+      "account": "40702810863183732998",
+      "city": "Йошкар-Ола",
+      "category": "Полиграфия"
+    },
+    {
+      "id": "cqs9gtshj",
+      "name": "Авто Аренда Йошкар-Ола",
+      "phone": "89633046085",
+      "responsible": "Татьяна",
+      "paymentMethod": "cash",
+      "account": "",
+      "city": "Йошкар-Ола",
+      "category": "Транспорт"
+    },
+    {
+      "id": "co8isblsr",
+      "name": "Арт Группа Йошкар-Ола",
+      "phone": "89206557820",
+      "responsible": "Тимур",
+      "paymentMethod": "transfer",
+      "account": "40702810938522942137",
+      "city": "Йошкар-Ола",
+      "category": "Артисты и ведущие"
+    }
+  ]
+}
