@@ -1899,15 +1899,24 @@ function switchProjectsView(view) {
   $$('#projViewSwitch .proj-view-btn').forEach(b => b.classList.toggle('active', (b.dataset.view === 'records') === isRecords));
 }
 
+function clearRecordsFlash() {
+  $$('#recFeed .rec-card.flash').forEach(c => c.classList.remove('flash'));
+}
+
 /** Переход из таблицы по клику на счётчик: открывает режим «Записи», прокручивает к
-    первой записи проекта и на пару секунд подсвечивает все его записи. */
+    первой записи проекта и подсвечивает все его записи. Подсветка держится, пока
+    пользователь сам куда-нибудь не кликнет (пустое место, другая запись, другой
+    проект) — по таймеру не гаснет, чтобы не пропала, пока человек читает. */
 function jumpToProjectRecords(projectId) {
   switchProjectsView('records');
+  clearRecordsFlash(); // снимаем подсветку с предыдущего проекта
   const cards = $$(`#recFeed .rec-card[data-id="${projectId}"]`);
   if (!cards.length) return;
   cards.forEach(c => c.classList.add('flash'));
   cards[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
-  setTimeout(() => cards.forEach(c => c.classList.remove('flash')), 2500);
+  // слушатель вешаем следующим тиком, иначе этот же клик по счётчику сразу бы его и снял
+  document.removeEventListener('click', clearRecordsFlash);
+  setTimeout(() => document.addEventListener('click', clearRecordsFlash, { once: true }), 0);
 }
 
 function bindProjects() {
