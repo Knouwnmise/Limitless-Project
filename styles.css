@@ -304,6 +304,14 @@ option{background:var(--card-bg);color:var(--white)}
 #dynamicsMode .chart-card h3{margin:0;font-size:15px;color:var(--dyn-text-2)}
 #dynamicsMode .chart-card canvas{max-height:260px}
 #dynamicsMode .chart-card-head{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin:0 0 10px}
+#dynamicsMode .chart-toggles{display:flex;gap:8px;flex-wrap:wrap;margin-left:auto}
+#dynamicsMode .chart-switch{display:flex;gap:2px;background:var(--dyn-bg);padding:3px;border-radius:7px}
+#dynamicsMode .chart-switch-btn{border:0;background:transparent;color:var(--slot);padding:5px 12px;border-radius:5px;cursor:pointer;
+  font-family:inherit;font-weight:700;font-size:12px;letter-spacing:.01em}
+#dynamicsMode .chart-switch-btn.active{background:var(--pill-bg);color:var(--pill-text)}
+#dynamicsMode .chart-switch-btn:hover:not(.active){color:var(--dyn-text)}
+#dynamicsMode .chart-select{font-family:inherit;font-size:12px;font-weight:700;color:var(--dyn-text);
+  background:var(--dyn-bg);border:1px solid var(--dyn-border);border-radius:7px;padding:6px 10px;cursor:pointer}
 #dynamicsMode .chart-empty{padding:30px;text-align:center;color:var(--slot);background:var(--dyn-panel);border:1px dashed var(--dyn-border-2);border-radius:10px;margin-bottom:16px}
 #dynamicsMode .dyn-table-wrap,#projectsMode .dyn-table-wrap{overflow:auto;margin-top:16px}
 #dynamicsMode .dyn-table-wrap h3,#projectsMode .dyn-table-wrap h3{color:var(--dyn-text-2);font-size:15px;margin:0 0 8px}

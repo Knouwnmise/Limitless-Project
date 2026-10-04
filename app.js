@@ -1506,15 +1506,28 @@ function renderDynTable() {
   });
 }
 
-/** График «Прибыль по месяцам» с drill-down по годам: если в выборке встречаются
-    разные года — сначала рисуем свёрнутый график по годам (клик по столбцу года
-    «открывает» его — показывает месяцы только этого года + кнопку возврата).
-    Если год всего один — сразу показываем месяцы, как раньше, без лишнего шага. */
+let dynIEMetric = 'all';      // 'income' | 'profit' | 'expense' | 'all' — что показывает график
+let dynIEUnits = 'currency';  // 'currency' | 'percent' — в рублях или в % от дохода периода
+const IE_METRIC_LABELS = { income: 'Доход', profit: 'Прибыль', expense: 'Расход', all: 'Доход, расход и прибыль' };
+const IE_NEUTRAL_COLOR = '#7a8cff'; // цвет «Прибыли», когда она показана ВМЕСТЕ с доходом/расходом (не по знаку +/-)
+
+/** График «Доход/Расход/Прибыль по месяцам» (показатель выбирается в select, единицы —
+    переключателем ₽/%) с drill-down по годам: если в выборке встречаются разные года —
+    сначала рисуем свёрнутый график по годам (клик по столбцу года «открывает» его —
+    показывает месяцы только этого года + кнопку возврата). Если год всего один — сразу
+    показываем месяцы.
+    В режиме «%» за 100% берётся ДОХОД периода (сумма по всем проектам периода): расход —
+    его доля от дохода (как принято говорить «расходы — 70% от выручки»; может быть больше
+    100%, если период в убытке), прибыль — остаток (100% − расход%, может уйти в минус).
+    Доли считаются по суммам периода целиком, а не усреднением % отдельных проектов —
+    иначе крупные и мелкие проекты искажали бы картину. */
 function renderMonthProfitChart(canvasEl, txtColor, gridColor, posColor, negColor) {
   const byMonth = {};
   history.forEach(r => {
     const m = (r.date || '').slice(0, 7) || '—';
-    byMonth[m] = (byMonth[m] || 0) + (r.profit || 0);
+    if (!byMonth[m]) byMonth[m] = { income: 0, expense: 0 };
+    byMonth[m].income += (r.income || 0);
+    byMonth[m].expense += (r.expense || 0);
   });
   const years = [...new Set(Object.keys(byMonth).map(m => m.slice(0, 4)).filter(Boolean))].sort();
   // если выбранный ранее год исчез из текущей выборки — сбрасываем drill-down
@@ -1525,16 +1538,45 @@ function renderMonthProfitChart(canvasEl, txtColor, gridColor, posColor, negColo
   const showYearsView = years.length > 1 && !monthChartYearFilter;
   if (backBtn) backBtn.hidden = !(years.length > 1 && monthChartYearFilter);
 
+  const metricLabel = IE_METRIC_LABELS[dynIEMetric];
+  const isPercent = dynIEUnits === 'percent';
+  const unitSuffix = isPercent ? ', % от дохода' : ', руб';
+  const showIncome = dynIEMetric === 'income' || dynIEMetric === 'all';
+  const showExpense = dynIEMetric === 'expense' || dynIEMetric === 'all';
+  const showProfit = dynIEMetric === 'profit' || dynIEMetric === 'all';
+  const profitAlone = dynIEMetric === 'profit'; // единственный показатель — красим по знаку +/-, как раньше
+
+  function buildDatasets(labels, sumsByLabel) {
+    const sums = labels.map(l => sumsByLabel[l] || { income: 0, expense: 0 });
+    const expensePct = s => (s.income > 0 ? Math.round((s.expense / s.income) * 1000) / 10 : 0);
+    const incomeData = isPercent ? sums.map(() => 100) : sums.map(s => s.income);
+    const expenseData = isPercent ? sums.map(s => expensePct(s)) : sums.map(s => s.expense);
+    const profitData = isPercent ? sums.map(s => Math.round((100 - expensePct(s)) * 10) / 10) : sums.map(s => s.income - s.expense);
+    const datasets = [];
+    if (showIncome) datasets.push({ label: `Доход${unitSuffix}`, data: incomeData, backgroundColor: posColor });
+    if (showExpense) datasets.push({ label: `Расход${unitSuffix}`, data: expenseData, backgroundColor: negColor });
+    if (showProfit) datasets.push({
+      label: `Прибыль${unitSuffix}`, data: profitData,
+      backgroundColor: profitAlone ? profitData.map(v => v < 0 ? negColor : posColor) : IE_NEUTRAL_COLOR,
+    });
+    return datasets;
+  }
+
   if (showYearsView) {
     const byYear = {};
-    Object.keys(byMonth).forEach(m => { const y = m.slice(0, 4) || '—'; byYear[y] = (byYear[y] || 0) + byMonth[m]; });
+    Object.keys(byMonth).forEach(m => {
+      const y = m.slice(0, 4) || '—';
+      if (!byYear[y]) byYear[y] = { income: 0, expense: 0 };
+      byYear[y].income += byMonth[m].income;
+      byYear[y].expense += byMonth[m].expense;
+    });
     const yearLabels = Object.keys(byYear).sort();
-    if (titleEl) titleEl.textContent = 'Прибыль по годам';
+    if (titleEl) titleEl.textContent = `${metricLabel} по годам`;
     charts.month = new Chart(canvasEl, {
       type: 'bar',
-      data: { labels: yearLabels, datasets: [{ label: 'Прибыль, руб', data: yearLabels.map(y => byYear[y]), backgroundColor: yearLabels.map(y => byYear[y] < 0 ? negColor : posColor) }] },
+      data: { labels: yearLabels, datasets: buildDatasets(yearLabels, byYear) },
       options: {
-        ...chartOpts(txtColor, gridColor),
+        ...chartOpts(txtColor, gridColor, isPercent),
         onClick: (evt, elements) => {
           if (!elements.length) return;
           monthChartYearFilter = yearLabels[elements[0].index];
@@ -1548,11 +1590,11 @@ function renderMonthProfitChart(canvasEl, txtColor, gridColor, posColor, negColo
 
   const monthKeys = monthChartYearFilter ? Object.keys(byMonth).filter(m => m.startsWith(monthChartYearFilter)) : Object.keys(byMonth);
   const months = monthKeys.sort();
-  if (titleEl) titleEl.textContent = monthChartYearFilter ? `Прибыль по месяцам — ${monthChartYearFilter}` : 'Прибыль по месяцам';
+  if (titleEl) titleEl.textContent = monthChartYearFilter ? `${metricLabel} по месяцам — ${monthChartYearFilter}` : `${metricLabel} по месяцам`;
   charts.month = new Chart(canvasEl, {
     type: 'bar',
-    data: { labels: months, datasets: [{ label: 'Прибыль, руб', data: months.map(m => byMonth[m]), backgroundColor: months.map(m => byMonth[m] < 0 ? negColor : posColor) }] },
-    options: chartOpts(txtColor, gridColor),
+    data: { labels: months, datasets: buildDatasets(months, byMonth) },
+    options: chartOpts(txtColor, gridColor, isPercent),
   });
 }
 
@@ -1600,13 +1642,16 @@ function renderCharts() {
     options: { ...chartOpts(txtColor, gridColor), indexAxis: 'y' },
   });
 }
-function chartOpts(txtColor, gridColor) {
+function chartOpts(txtColor, gridColor, percentAxis) {
   return {
     responsive: true, maintainAspectRatio: false,
-    plugins: { legend: { labels: { color: txtColor } } },
+    plugins: {
+      legend: { labels: { color: txtColor } },
+      ...(percentAxis ? { tooltip: { callbacks: { label: ctx => `${ctx.dataset.label}: ${ctx.parsed.y}%` } } } : {}),
+    },
     scales: {
       x: { ticks: { color: txtColor }, grid: { color: gridColor } },
-      y: { ticks: { color: txtColor }, grid: { color: gridColor } },
+      y: { ticks: { color: txtColor, callback: percentAxis ? (v => v + '%') : undefined }, grid: { color: gridColor } },
     },
   };
 }
@@ -2104,6 +2149,14 @@ function init() {
     renderDynamics();
   });
   $('#monthChartBackBtn').addEventListener('click', () => { monthChartYearFilter = null; renderCharts(); });
+  $('#ieMetricSelect')?.addEventListener('change', e => { dynIEMetric = e.target.value; renderCharts(); });
+  $$('#ieUnitsSwitch .chart-switch-btn').forEach(b => {
+    b.addEventListener('click', () => {
+      dynIEUnits = b.dataset.units;
+      $$('#ieUnitsSwitch .chart-switch-btn').forEach(x => x.classList.toggle('active', x === b));
+      renderCharts();
+    });
+  });
   $$('.mode-btn').forEach(b => b.addEventListener('click', () => switchMode(b.dataset.mode)));
 
   // восстановление из LocalStorage или старт с пустым
