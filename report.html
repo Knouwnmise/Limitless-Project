@@ -524,14 +524,21 @@
     <button class="btn" id="projectsExportBtn">↥ Экспорт всей базы (JSON)</button>
     <button class="btn" id="projectsClearBtn">Очистить базу</button>
     <span class="muted small" id="projectsCountInfo">Всего в базе: 0</span>
+    <div class="proj-view-switch" id="projViewSwitch">
+      <button type="button" class="proj-view-btn active" data-view="table">Таблица</button>
+      <button type="button" class="proj-view-btn" data-view="records">Записи</button>
+    </div>
   </section>
 
-  <section class="card">
+  <!-- Режим «Таблица»: список проектов. Колонка «Записи» показывает, сколько у проекта
+       заметок и положительных/отрицательных результатов; клик по ней открывает режим
+       «Записи» с прокруткой к записям этого проекта. -->
+  <section class="card" id="projectsTableView">
     <div class="dyn-table-wrap">
       <table class="dyn-table" id="projectsTable">
         <thead>
           <tr>
-            <th>Событие</th><th>Дата</th><th>Статус</th>
+            <th>Событие</th><th>Дата</th><th>Статус</th><th>Записи</th>
             <th>Предоплата</th><th>Доход</th><th>Расход</th><th>Прибыль</th><th></th>
           </tr>
         </thead>
@@ -539,6 +546,23 @@
       </table>
     </div>
     <p class="muted small" id="projectsEmpty" style="margin:12px 0 0">В базе пока нет сохранённых проектов.</p>
+  </section>
+
+  <!-- Режим «Записи»: сплошная лента заметок и результатов по всем проектам базы.
+       Клик по карточке открывает соответствующий проект во вкладке «Проект». -->
+  <section class="card" id="projectsRecordsView" hidden>
+    <div class="rec-head">
+      <h3 class="rec-title">Заметки и результаты</h3>
+      <input type="search" id="recSearch" class="rec-search" placeholder="Поиск по тексту…" />
+      <div class="rec-filters" id="recFilters">
+        <button type="button" class="rec-filter active" data-filter="all">Всё</button>
+        <button type="button" class="rec-filter" data-filter="note">Заметки</button>
+        <button type="button" class="rec-filter" data-filter="positive">Плюсы</button>
+        <button type="button" class="rec-filter" data-filter="negative">Минусы</button>
+      </div>
+    </div>
+    <div class="rec-feed" id="recFeed"></div>
+    <p class="muted small" id="recEmpty" style="margin:12px 0 0">Записей пока нет.</p>
   </section>
 </main>
 

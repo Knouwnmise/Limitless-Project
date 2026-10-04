@@ -1787,6 +1787,18 @@ function importProjectsBaseFiles(files) {
   });
 }
 
+/** Сколько у проекта заметок и положительных/отрицательных результатов — для колонки
+    «Записи» в таблице базы. */
+function countProjectRecords(r) {
+  const notes = Array.isArray(r.notes) ? r.notes.length : (typeof r.notes === 'string' && r.notes.trim() ? 1 : 0);
+  const results = Array.isArray(r.results) ? r.results : [];
+  return {
+    notes,
+    positive: results.filter(x => x.type === 'positive').length,
+    negative: results.filter(x => x.type !== 'positive').length,
+  };
+}
+
 function renderProjectsBase() {
   const tbody = $('#projectsBody');
   if (!tbody) return;
@@ -1796,10 +1808,19 @@ function renderProjectsBase() {
   tbody.innerHTML = sorted.map(p => {
     const r = p.report || {};
     const fin = computeReportFinancials(r);
+    const c = countProjectRecords(r);
+    // счётчики кликабельны: ведут в режим «Записи» с прокруткой к записям этого проекта
+    const counts = [];
+    if (c.notes) counts.push(`<button type="button" class="rec-count rec-jump" data-id="${p.id}" title="Показать заметки этого проекта">📝 ${c.notes}</button>`);
+    if (c.positive || c.negative) counts.push(`<button type="button" class="rec-count rec-jump" data-id="${p.id}" title="Показать результаты этого проекта">`
+      + (c.positive ? `<span class="p">＋${c.positive}</span>` : '')
+      + (c.negative ? `<span class="m">−${c.negative}</span>` : '') + '</button>');
+    const countsCell = counts.length ? `<span class="rec-counts">${counts.join('')}</span>` : '<span class="rec-counts"><span class="none">—</span></span>';
     return `<tr data-id="${p.id}" title="Двойной клик — открыть проект">
       <td>${escapeHtml(r.title || '—')}</td>
       <td>${escapeHtml(fmtDate(r.date) || '—')}</td>
       <td>${escapeHtml(STATUS_LABELS[r.status] || r.status || '—')}</td>
+      <td>${countsCell}</td>
       <td>${fmtMoney(fin.prepaid)}</td>
       <td>${fmtMoney(fin.income)}</td>
       <td>${fmtMoney(fin.expense)}</td>
@@ -1809,6 +1830,84 @@ function renderProjectsBase() {
   }).join('');
   if (empty) empty.hidden = projectsBase.length > 0;
   if (countInfo) countInfo.textContent = 'Всего в базе: ' + projectsBase.length;
+  renderProjectRecords();
+}
+
+/* ---------- База проектов: режим «Записи» ---------- */
+let projRecFilter = 'all';   // 'all' | 'note' | 'positive' | 'negative'
+let projRecSearch = '';
+
+/** Собирает заметки и результаты всех проектов базы в один плоский список.
+    У результатов нет собственной даты (в модели только type/category/text), поэтому
+    для них берём дату самого мероприятия — иначе их некуда поставить в ленте по датам. */
+function buildProjectRecords() {
+  const out = [];
+  projectsBase.forEach(p => {
+    const r = p.report || {};
+    const eventDate = r.date || '';
+    const title = r.title || p.label || 'Без названия';
+    parseNotesIn(r.notes, eventDate).forEach(n => {
+      out.push({ projectId: p.id, projectTitle: title, date: n.date || eventDate, kind: 'note', category: '', text: n.text || '' });
+    });
+    (Array.isArray(r.results) ? r.results : []).forEach(x => {
+      out.push({
+        projectId: p.id, projectTitle: title, date: eventDate,
+        kind: x.type === 'positive' ? 'positive' : 'negative',
+        category: x.category || '', text: x.text || '',
+      });
+    });
+  });
+  return out.sort((a, b) => (b.date || '').localeCompare(a.date || '')); // новые сверху
+}
+
+function renderProjectRecords() {
+  const feed = $('#recFeed');
+  if (!feed) return;
+  const empty = $('#recEmpty');
+  const q = projRecSearch.trim().toLowerCase();
+  const list = buildProjectRecords().filter(rec => {
+    if (projRecFilter !== 'all' && rec.kind !== projRecFilter) return false;
+    if (!q) return true;
+    return (rec.text + ' ' + rec.category + ' ' + rec.projectTitle).toLowerCase().includes(q);
+  });
+  const kindLabel = { note: 'Заметка', positive: 'Результат', negative: 'Результат' };
+  feed.innerHTML = list.map(rec => `
+    <div class="rec-card ${rec.kind}" data-id="${rec.projectId}" title="Открыть проект">
+      <span class="d">${escapeHtml(fmtDate(rec.date) || '—')}</span>
+      <div class="body">
+        <div class="top">
+          <span class="rec-proj">${escapeHtml(rec.projectTitle)}</span>
+          <span class="rec-kind ${rec.kind}">${kindLabel[rec.kind]}${rec.category ? ' · ' + escapeHtml(rec.category) : ''}</span>
+        </div>
+        <div class="txt">${escapeHtml(rec.text)}</div>
+      </div>
+      <span class="go">открыть проект →</span>
+    </div>`).join('');
+  if (empty) {
+    empty.hidden = list.length > 0;
+    empty.textContent = (q || projRecFilter !== 'all') ? 'Ничего не найдено по этому фильтру.' : 'Записей пока нет.';
+  }
+}
+
+/** Переключение «Таблица / Записи» внутри вкладки «База проектов». */
+function switchProjectsView(view) {
+  const isRecords = view === 'records';
+  const tableEl = $('#projectsTableView');
+  const recEl = $('#projectsRecordsView');
+  if (tableEl) tableEl.hidden = isRecords;
+  if (recEl) recEl.hidden = !isRecords;
+  $$('#projViewSwitch .proj-view-btn').forEach(b => b.classList.toggle('active', (b.dataset.view === 'records') === isRecords));
+}
+
+/** Переход из таблицы по клику на счётчик: открывает режим «Записи», прокручивает к
+    первой записи проекта и на пару секунд подсвечивает все его записи. */
+function jumpToProjectRecords(projectId) {
+  switchProjectsView('records');
+  const cards = $$(`#recFeed .rec-card[data-id="${projectId}"]`);
+  if (!cards.length) return;
+  cards.forEach(c => c.classList.add('flash'));
+  cards[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+  setTimeout(() => cards.forEach(c => c.classList.remove('flash')), 2500);
 }
 
 function bindProjects() {
@@ -1839,15 +1938,37 @@ function bindProjects() {
     updateModeBarVisibility();
   });
   $('#projectsBody').addEventListener('click', e => {
+    // счётчик записей — уводит в режим «Записи» к записям этого проекта
+    const jump = e.target.closest('.rec-jump');
+    if (jump) { e.stopPropagation(); jumpToProjectRecords(jump.dataset.id); return; }
     const btn = e.target.closest('.del-project');
     if (!btn) return;
     e.stopPropagation();
     if (confirm('Удалить проект из базы?')) deleteProjectFromBase(btn.dataset.id);
   });
   $('#projectsBody').addEventListener('dblclick', e => {
+    // двойной клик по счётчику не должен ещё и открывать проект
+    if (e.target.closest('.rec-jump')) { e.stopPropagation(); return; }
     const tr = e.target.closest('tr');
     if (!tr || !tr.dataset.id) return;
     openProjectFromBase(tr.dataset.id);
+  });
+
+  // ---- режим «Записи» ----
+  $$('#projViewSwitch .proj-view-btn').forEach(b => {
+    b.addEventListener('click', () => switchProjectsView(b.dataset.view));
+  });
+  $$('#recFilters .rec-filter').forEach(b => {
+    b.addEventListener('click', () => {
+      projRecFilter = b.dataset.filter;
+      $$('#recFilters .rec-filter').forEach(x => x.classList.toggle('active', x === b));
+      renderProjectRecords();
+    });
+  });
+  $('#recSearch')?.addEventListener('input', e => { projRecSearch = e.target.value; renderProjectRecords(); });
+  $('#recFeed')?.addEventListener('click', e => {
+    const card = e.target.closest('.rec-card');
+    if (card && card.dataset.id) openProjectFromBase(card.dataset.id);
   });
 }
 
